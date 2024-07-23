@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if else condition and switch</title>
+<!--  -->
+    <script>
+        let age = 15;
+        let hasvotercard = 'no';
+
+        if(age>=14 && hasvotercard=='yes'){
+            alert("you can vote!")
+        }   else if (age>=14 && hasvotercard!='yes') {
+            alert("make a voter card")
+        }   else {
+            alert("you cant vote ")
+        }
+
+        // nested if 
+        let age1 = 15;
+        let hasvotercard1 = 'no';
+
+        if(age1>=14){
+
+            if (hasvotercard1 == 'yes') {
+                alert("you can vote");
+            }else{
+                alert("make voter card");
+            }
+        }else{
+            alert("you cant vote");
+        }
+
+
+        // termery op 
+
+        let isloggedin = 1; //if stored 0 loggedout if 1 then loggin
+
+        if (isloggedin==0) {
+            document.write("login")
+        } else{
+            document.write("logout")
+        }
+        // we can also wirte this as 
+        let option = isloggedin == 1 ? "logout" : "login";
+        //  var       condition           true        false 
+
+
+
+        // for undefined or null var 
+        let user;
+        // user = "bjadbja";
+        
+        alert(user ?? "guest user")
+
+        // without switch 
+        let input;
+
+        input = "";
+
+        if (input === 1) {
+            document.write("continue")
+        } else if (input === "y") {
+            document.write("continue")
+        } else if (input === "yes") {
+            document.write("continue")
+        } else if (input === 0) {
+            document.write("end")
+        } else if (input === "n") {
+            document.write("end")
+        } else if (input === "no") {
+            document.write("end")
+        } else{
+            document.write("wrong")
+        }
+
+        // with switch case 
+        
+        switch (input) {
+            case 1:
+                document.write("continue");
+                break;
+            case "y":
+                document.write("continue");
+                break;
+            case "yes":    
+                document.write("continue");
+                break;
+            case 0:    
+                document.write("end");
+                break;
+            case "n":    
+                document.write("end");
+                break;
+            case "no":    
+                document.write("end");
+                break;
+            default:
+                document.write("wrong")
+                break;
+        }
+
+        // we can also write like this if one or more have same instruction inside body and are in same order
+
+        switch (input) {
+            case 1:
+            case "y":
+            case "yes":    
+                document.write("continue");
+                break;
+            case 0:    
+            case "n":  
+            case "no":    
+                document.write("end");
+                break;
+            default:
+                document.write("wrong")
+                break;
+        }
+
+
+    </script>
+
+
+</head>
+<body>
+    
+</body>
+</html>

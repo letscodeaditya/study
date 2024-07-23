@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>font</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+
+    <!-- /* to use external font */
+    /* most used font style in browser are ttf,otf,woff */
+    /* link part above is copied from the font website in head section and now use css font family on element to use
+    fonts on them */ -->
+
+    <style>
+        h1 {
+            font-weight: 800;
+            /* using css font family  */
+            font-family: 'Anton', sans-serif;
+        }
+
+        p {
+            font-size: 30px;
+            font-weight: regular;
+            font-style: italic;
+            font-variant: small-caps;
+            /* using css font family  */
+            font-family: 'Cabin', sans-serif;
+            /* we can use font different spec mention on font website by using different property mention there */
+            font-weight: 600;
+            font-style: italic;
+
+        }
+        /* to use downloaded font then five any name to it but then use that name as font family in element  */
+        @font-face {
+            font-family: giveanynamehere;
+            src: url("font/Dirtyboy-BxYl.ttf");
+        }
+        #fontd{
+            font-family: giveanynamehere;
+            /* we can give more than one font to single element so that if one fails to load others will work  */
+            font-family: giveanynamehere, 'Cabin', sans-serif ;
+
+            /* shortcut one line for font 1 style 2 varient 3 weight 4 size 5 font family  */
+            font: italic small-caps 600 20px giveanynamehere ;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>head</h1>
+    <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias, debitis molestias incidunt cumque eos laborum
+        inventore fugiat ab, illum laudantium maiores laboriosam ad earum perferendis nostrum? Impedit explicabo ut
+        optio, et perferendis minima quo eos nesciunt eaque ipsam, distinctio, necessitatibus cum sapiente. Dignissimos
+        doloremque quo delectus. Nisi autem aut consequuntur, veniam consequatur dolorem pariatur molestias explicabo
+        placeat rem itaque recusandae sunt porro tempore corporis! Vitae eaque voluptatibus ex reiciendis voluptas,
+        inventore facere repellat possimus enim perspiciatis ut vel modi, commodi ullam! Enim a suscipit, consectetur
+        similique optio, odio alias molestias accusantium natus, dolore porro saepe! Mollitia sed voluptate ab veniam.
+    </p>
+    <br>
+    <div id="fontd">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum ipsam alias maiores nisi. Ipsam nemo aliquam
+        optio aspernatur magni perspiciatis obcaecati veritatis recusandae laboriosam, temporibus quae ipsum dolore
+        quaerat non! Inventore possimus, culpa commodi aut reiciendis nostrum ipsam molestias repellendus.
+    </div>
+</body>
+
+</html>

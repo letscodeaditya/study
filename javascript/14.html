@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert before and remove element and clone element</title>
+</head>
+<body>
+    <ul id="list">
+        <li>list1</li>
+        <li>list2</li>
+        <li>list3</li>
+        <li>list4</li>
+    </ul>
+
+    <br>
+
+    <ul id="menu">
+        <li>home</li>
+        <li>product</li>
+        <li>vision</li>
+        <li>about us</li>
+    </ul>
+
+    <br>
+
+    <!-- beforebegin -->
+     <div id="intro"> <!-- selected -->
+        <!-- afterbegin -->
+        <h2>heading</h2>
+        <p>
+
+        </p>
+        <!-- beforeend -->
+    </div>
+    <!-- afterend -->
+
+
+
+    <script>
+        /////////inserting in any parent element 
+
+        //selecting parent element
+        let list1 = document.getElementById("list");
+        
+        //creating new element
+        let item = document.createElement("li");
+        item.textContent = "new list";
+
+
+        //to select postion
+        let pos = list1.firstElementChild; //1st li is selected
+        let pos = list1.firstElementChild.nextElementSibling; //2nd li is selected
+
+
+        //to insert
+        list1.insertBefore(item, pos) //in parameter element to be added and position is passed
+
+
+
+
+
+
+        /////////inserting in body
+
+        //selecting body
+        let parent = document.body;
+
+        //creating new element heading
+        let elm = document.createElement("h2");
+        elm.textContent = "this is heading";
+
+        //selecting pos where to add 
+        let list = document.getElementById("list");
+
+        //to insert
+        parent.insertBefore(elm, list);
+
+
+
+
+
+
+        ////////////to remove
+        //we remove any element by targeting parent element
+
+        //to select the parent
+        let pr = document.getElementById("menu");
+
+        //to select pos
+        let elmm = parent.firstElementChild;
+
+        //to remove 
+        pr.removeChild(elmm);
+
+        //to remove whole element(parent pr) by tageting body
+        document.body.removeChild(pr);
+
+
+
+
+
+        /////////////to clone
+
+        let menu = document.getElementById("menu");
+
+        let cloneelm = menu.cloneNode(true);  //true for all and false for only parent to be copy
+        cloneelm.id = "newid"; //it also copy the id so change it 
+
+        //to append (paste)
+        document.body.appendChild(cloneelm);
+
+
+
+
+
+        ///////////////to replace a element
+        let para = document.getElementById("menu");
+
+        let newel = document.createElement("li");
+        newel.textContent = "sale";
+
+        //pos of replace
+        let replace = para.firstElementChild.nextElementSibling;
+
+        para.replaceChild(newel, replace);
+
+
+
+
+        //////////////insert adjacent html
+        //we can pass 4 position(see on top) and a text which will be converted into html
+
+        //selecting
+        let elmen = document.getElementById("intro");
+
+        //new text
+        let html = "<h1>new heading</h1>";
+
+        //insert
+        elmen.insertAdjacentElement('beforebegin',html);
+    
+
+
+
+
+    </script>
+</body>
+</html>

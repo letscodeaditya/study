@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>alert, prompt , confirm</title>
+    <!-- function to interact with user : alert, prompt and confirms -->
+
+    <!-- 
+    1.alert() - shows a message. 
+
+    2.prompt()- shows a message , input text. it return the text on ok or, if cancel button, null 
+
+    3.confirm() - shows a message, confirm with"ok" or "cancel". it return true for ok and false for cancel/esc.
+
+    note: all these pause script execution and dont allow the visitor to interact with the rest of the page until the window has been dismissed. -->
+
+    <script>
+        //alert
+        alert("hello");
+
+
+        //prompt
+        let age = prompt("enter your age");
+
+        if (age != null) {
+            document.write(`your age is $(age)`);
+        } else{
+            document.write("age field was blank");
+        }
+
+        //confirm
+        let response = confirm('are you sure, you want to delete?'); //true/ok is 1 and false/cancel 0
+        if (response) {
+            document.write('deleted');
+        }else{
+            document.write('not deleted');
+        }
+
+    </script>
+    
+</head>
+<body>
+    
+</body>
+</html>

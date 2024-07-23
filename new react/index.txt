@@ -1,0 +1,25 @@
+instruction
+
+first
+
+second
+
+third
+
+to-do-app-ver3
+to-do-app-ver3(ref,fun)
+to-do-app-ver3(context,reducer)
+
+social media
+
+fourth (apis) - change in  postlist.jsx
+
+fifth - fetch, useeffect , loading spinner, useeffect adv (clean up)
+
+sixth - usecallback and memo (screenshot)
+
+seven - fetch(posting data to server)
+
+eight - router [npm install react-router-dom]
+
+nine - redux and toolkit[npm i redux, npm install @reduxjs/toolkit, npm uninstall redux (if redux is installed)]

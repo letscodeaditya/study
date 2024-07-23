@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text & link</title>
+
+    <style>
+        #text{
+            width: 500px;
+            border: 1px solid black;
+            /* text color  */
+            color: rgb(255, 94, 0);
+            /* text align  */
+            text-align: justify;
+
+            /* we use none in text deco to remove underline from link bec underline is default for link  */
+            text-decoration: line-through;
+            text-transform: capitalize;
+            /* to make space btw line */
+            line-height: 50px;
+
+            /* first text will leave space  */
+            text-indent: 50px;
+
+            /* make space btw every letter  */
+            letter-spacing: 5px;
+            word-spacing: 2px;
+
+            /* html ignores white space in btw para so to make space we use br but we can display all para as it is written with white spaces using white space, it is normal by default , in nowrap it will make straight line and cross range until we use br */
+            white-space: pre;
+
+            /* if a word is bigger that container itself we use word wrap to break the word to fit in below line  */
+            word-wrap: break-word;
+
+        }
+        img{
+            vertical-align: top; 
+        }
+
+        /* to put shadow in text  */
+        #shadow{
+            font-size: large;
+            /* first is for horizontal second for vertical(up/down) third for blur and fourth for color  */
+            text-shadow: 5px 10px 5px red;
+        }
+
+        /* to make text vertical etc */
+        #ver{
+            width: 500px;
+            border: 1px solid red;
+            writing-mode: vertical-lr;
+        }
+
+        /* for link there are 4 states of  link, order is nessesary. we can also directly write a:link etc without using div/class  */
+        a{
+            text-decoration: none ;
+        }
+        #lin:link{
+            color: red;
+        }
+        /* when link is already visited  */
+        #lin:visited{
+            color: aqua;
+        }
+        /* when mouse is over link  */
+        #lin:hover{
+            color: green;
+        }
+        /* when link is open  */
+        #lin:active{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="text">
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing <img height="70px" src="image/3img3.jfif"> elit. Deserunt fugit id       totam reprehenderit 
+                 animi vitae nam officia! Quae in voluptatem, tempora ut repellat fuga totam accusamus architecto quasi commodi 
+                 
+                 
+                 suscipit error, delectus minima adipisci atque, a cum impedit itaque officia.
+        </p>
+    </div>
+    <br>
+    <br>
+    <div id="shadow">
+        <p>
+         afdafaf   
+        </p> 
+    </div>
+    <br>
+    <br>
+    <div id="ver">
+        <p>
+            text here
+        </p>
+    </div>
+    <br>
+    <br>
+    <div>
+    
+            <a id="lin" href="www.facebook.com">google</a>
+        
+    </div>
+
+</body>
+</html>

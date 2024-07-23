@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>type conversion</title>
+
+    <!-- in js it has auto type conversion  -->
+
+    <script>
+        //
+        let type = "5" + null;
+        console.log(type);
+        console.log(typeof type);
+
+
+        //here js will treat 5 as string and make 2 also string = 52 
+        let type = "5" + 2;
+        console.log(type);
+        console.log(typeof type);
+        
+        //here js will automaticly change 5 from string to number as - only do arthematic operation so = 5-2 3
+        let type = "5" - 2;
+        console.log(type);
+        console.log(typeof type);
+        
+        //here js make 5 as string but then encounter yes and it cant convert it into number so it will give nan (not a number)
+        let type = "5" * "yes";
+        console.log(type);
+        console.log(typeof type);
+
+        // some inbuild function 
+        // 1.string()
+        // 2.number()
+        // 3.boolean()
+
+        //string()
+        let type = 5;
+        console.log(typeof type);
+
+        let newtype = string(type);
+        console.log(typeof newtype);
+        
+        
+        //number()
+        let type = "hello";
+        console.log(typeof type);
+
+        let newtype = Number(type);
+        console.log(newtype); //this will give nan(not a number) but js will treat as a number only 
+        console.log(typeof newtype);
+
+
+        //boolean
+        // if will convert a number except 0 it will convert any number to true only.
+        // if we convert a string except for blank string "" it will convert it to true.
+        let type = 5;
+        console.log(typeof type);
+
+        let newtype = Boolean(type);
+        console.log(newtype);
+        console.log(typeof newtype);
+         
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forms</title>
+</head>
+<body>
+    <h2>this is html forms tutorial</h2>
+    <form action="backend.php">
+        <!-- here div is for putiing role in next line bec div take the whole division -->
+        <div>
+            <!-- here name=myname is to store perticullar data in our backend.php -->
+          name: <input type="text" name="myname">
+        </div>
+        <br>
+        <!-- for label tag id name and for name should be same -->
+        <label for="salary">salary</label>
+        <div>
+            <input type="text" name="mysalary" id="salary">
+        </div>
+        <br>
+        <div>
+            role: <input type="text" name="myrole">
+        </div>
+        <br>
+        <div>
+            email: <input type="text" name="myemail">
+        </div>
+        <br>
+        <!-- to take input of date -->
+        <div>
+           date of birth <input type="date" name="mydate">
+        </div>
+        <!-- for check box -->
+        <br>
+        <div>
+            are u eligible?: <input type="checkbox" name="mycheckbox">    
+        </div>
+        <!-- by deafault checked -->
+        <br>
+        <div>
+            are u eligible?: <input type="checkbox" name="mycheckbox" checked>    
+        </div>
+        <!-- chose only one check box option by putting name same for all radio we can do this -->
+        <br>
+        <div>
+            chose your gender: male<input type="radio" name="mygender"> female <input type="radio" name="mygender">   
+        </div>
+        <!-- to take paragraph or description from user -->
+        <br>
+        <div>
+            write about yourself: <br> <textarea name="mytext" cols="30" rows="10"></textarea>
+        </div>
+        <br>
+        <!-- selecting option -->
+        <div>
+            <!-- we use label so that by clicking name the box get selected -->
+            <label for="car">which car:</label>
+            <select name="mycare" id="car">
+                <option value="ind">indica car</option>
+                <option value="swf">swift car</option>
+                <!-- bydeafult selected -->
+                <option value="nano" selected>nano car</option>
+            </select>
+        </div>
+        <!-- to submit our data -->
+        <br>
+        <div>
+            <input type="submit" value="submit now">
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 334px;
+            height: 1344px;
+            /* background-color: blue; */
+            border: 2px solid red;
+            color: aliceblue;
+            /* for inserting image */
+            background-image: url('download.jfif');
+            /* for not repeat */
+            background-repeat: no-repeat;
+            /* contain will show full image but leaves space */
+            background-size: contain;
+            /* cover it cover whole element by the image it may cause image left */
+            background-size: 63px 45px;
+            /* to set postion of image */
+            background-position: top center;
+            /* to fix ur image even after scrolling but change but remove backpostion explore more with refrence*/
+            background-attachment: fixed;
+            /* to do all of this in one */
+            background: red url('download.jfif') no-repeat scroll top right;
+
+
+        }
+        body{
+            /* background-image: url('download.jfif'); */
+            /* background-repeat: no-repeat; */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam doloribus ipsum officiis consectetur. Animi quod unde quisquam delectus harum perspiciatis?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint vel optio maiores deserunt, beatae dolorem esse inventore consequatur facere temporibus quibusdam, fugiat, quaerat officiis necessitatibus nam sapiente ipsam. Id doloribus recusandae nam, sequi consequuntur quam harum quia earum voluptas, vitae quae rem nemo rerum eius omnis deleniti consectetur, magnam aperiam.
+    </div>
+    
+</body>
+</html>

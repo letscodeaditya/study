@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registration</title>
+</head>
+<body>
+    <h2>Registration form</h2>
+    <form action="backend.php">
+        
+        <div>
+          E-mail : <input type="email" name="email">
+        </div>
+        <br>
+        <div>
+            password : <input type="password" name="pass" id="pass">
+        </div>
+        <br>
+        <div>
+           confirm password : <input type="password" name="pass" id="pass">
+        </div>
+        <br>
+        <h2>Personal details</h2>
+        <br>
+
+        <div>
+            name : <input type="text" id="name">
+        </div>
+        <br>
+        <div>
+            father name : <input type="text" id="fname">
+        </div>
+        <br>
+        <div>
+            mother name : <input type="text" id="mname">
+        </div>
+        <br>
+        <div>
+            date of birth <input type="date" name="mydate">
+            
+            age : <span id="age"> your age</span>
+        </div>
+        <br>
+        <div>
+            chose your gender: male<input type="radio" name="mygender"> female <input type="radio" name="mygender">   
+        </div>
+        <br>
+        <div>
+            <label for="quali">qualification:</label>
+            <select name="mycare" id="qua">
+                <option value="ten">10th</option>
+                <option value="secon">12th</option>
+                <option value="ucollege">graduation</option>
+                <option value="pcollege">master</option>
+                <option value="nothing" selected>select here</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            Aadhar number : <input type="text" id="an">
+        </div>
+        <br>
+        <div>
+            PAN number : <input type="text" id="pn">
+        </div>
+        <br>
+        <div id="selfi">
+            upload selfie : <input type="file"> <button>take pic</button>
+        </div>
+        <br>
+        <div>
+            address <br>
+            line 1 :<input type="text">
+            <br> 
+            line 2 : <input type="text">
+            <br>
+            line 3 : <input type="text">
+        </div>
+        <br>
+        <div>
+            chose your hobbies: coding<input type="radio" name="hob"> dancing <input type="radio" name="hob"> painting <input type="radio" name="hob">  
+        </div>
+        <br>
+        <div>
+            accept terms & condition: <input type="checkbox" name="mycheckbox">    
+        </div>      
+        <br>
+        <br>
+        <div>
+            <input type="submit" value="SUBMIT">
+            <input type="reset" value="CLEAR">
+        </div>
+    </form>
+</body>
+</html>

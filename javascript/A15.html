@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>changing attributes, insert inline style</title>
+    <style>
+        .color{
+            background-color: yellow;
+            color: red;
+        }
+        .dim{
+            border: 1px solid red;
+            padding: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="btn" name="form2" class="color">send</button>
+
+    <script>
+        let btn = document.getElementById("btn");
+
+        /////attribute
+
+        //to set
+        btn.setAttribute("class", "form1"); //attribute type , lableit
+
+        //to get
+        let val = btn.getAttribute("name");
+        console.log(val);
+
+        //to remove
+        btn.removeAttribute("name");
+
+        //to know a att is present return t or f
+        btn.hasAttribute("class");
+
+
+
+
+        //////style
+
+        //1 method(can add multiple)
+        btn.style.cssText = "background-color: red; color: white;";
+        
+        //2 method(can add multiple)
+        btn.setAttribute('style','color:white; background-color:red;');
+        
+        //in method 1&2 it will replace already exist style but 3 method keep both but apply only one
+        
+        //to keep already exist style in method 1
+        btn.style.cssText += "background-color: red; color: white;";
+
+
+
+        //3 method(cant add multiple)
+        btn.style.background = "red";
+
+
+        /////to know the style applied
+        let css = getComputedStyle(btn);
+        console.log(css);
+
+
+
+        ////to add more classes to and element
+        btn.className += " dim";
+
+
+        //classlist
+        //to check class this will give array of classes used in
+        console.log(btn.classList);
+        //we can also add new class and remove and replace and check with this
+        btn.classList.add("newc");
+        btn.classList.remove("newc");
+        btn.classList.replace("color", "newc"); //what to replace,new class
+        btn.classList.contains("color");
+
+    </script>
+</body>
+</html>

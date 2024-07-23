@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array</title>
+
+    <script>
+        // different way to write array 
+
+        //1. 
+        let book = ["math", "bio", "comp"];
+
+        //2.
+        let book2 = new Array(1, "bio", "phys");
+
+        // to print 
+        console.log(book);
+        console.log(book[2]);
+
+        //to update 
+        book[2] = "eng";
+
+        //to add new element at begin
+        book.unshift("sc");
+
+        //to add new element at end
+        book.push("hindi");
+
+        //to remove first element
+        book.shift();
+
+        //to remove last element 
+        book.pop();
+
+        //to remove a specific element its parameter is pos and till where you want to remove
+        book.slice(1,1);
+
+        //to empty a array 2 ways
+        book=[];
+        // or 
+        book.length=0;
+
+        //to know position of and element in array
+        let position = book.indexOf("bio");
+        console.log(position);
+
+        //to know the length of array
+        console.log(book.length);
+
+        // to know if a var is array or not
+        let book1 = ["hello","bye",5];
+        let book2 = "maths";
+
+        console.log(Array.isArray(book1));
+        console.log(Array.isArray(book2));
+
+        //break a string and make it a array
+        let text = "this is a random text";
+        let wordarray = text.split('s'); //this will split whenever it finds the parameter  value
+
+        //to join a aaray into string
+        let bookn = ["ssc","cgl","java"];
+        let word = bookn.join('-'); //will add the parameter value between every element in array after making it string
+
+        //to add multiple array into a single one
+        let age = [12,55,66];
+        let mind = ["mindfuck","dimagchod"];
+        let food = ["puri","samosa"];
+
+        let newage = age.concat(mind, food);
+
+
+
+        //multi dimensional array
+
+        let newa = [
+            ["n","k"], //pos 0(0,1)
+            ["m","a"], //pos 1(0,1)
+            [55,66], //pos 2(0,1)
+        ]
+
+        let fetch = newa[1][0];
+        console.log(fetch);
+
+
+
+        //for traversing a array
+        // using for loop 
+
+        let chips = ["kurkure","lays","uncle chips","bingo","cheetos"];
+        let chipslength = chips.length;
+
+        for (let i = 0; i < chips.length; i++) {
+            console.log(`element ${i} is ${book[i]}\n`);
+        }
+
+        //using function
+        chips.forEach(myfun);
+
+        function myfun(value) {
+            console.log(value);
+        }
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 class and object and inheritance</title>
+</head>
+<body>
+    <script>
+        class person{
+
+            //constructor will be called everytime when we make an oject of this class or just by calling class directly
+            constructor(n, a){
+                this.name = n;
+                this.age = a;
+            }
+
+            //every method get attached to prototype of the class automatically
+            sayhi(){
+                console.log("hi");
+            }
+
+            //static property and method are not copied to the object and remain with the class
+            static sprop = "something";
+            //static method - it can only be called by the class name not by the object created name
+            static hello(){
+                console.log("hello");
+            }
+        }
+
+        let person1 = new person("aditya", 23);
+
+        //calling static fun with class name
+        person.hello();
+
+    </script>
+
+    <script>
+        //inheritance
+
+
+        class emp{
+
+            //private and public property and fun with getter and setter
+
+            //making name private we need to declare property private out of function first before using it
+            #name = "";
+            #role = "";
+            constructor(n){
+                this.#name = n;
+            }
+
+            //making a getter method to get private property
+            getname(){
+                console.log(this.#name);
+            }
+
+            //making a setter method to set a private property
+            setrole(role){
+                this.#role = role;
+            }
+
+            // making a private fun it can be called by out fun and then by the object
+            #onlyforadmin(){
+                console.log("not readably directly");
+            }
+
+
+            msg(){
+                console.log("hi");
+            }
+        }
+
+        //using extent to inherite all property and fun of emp
+        class manager extends emp{
+            constructor(p, d){
+                super(p);
+                this.department = d;
+            }
+
+            msg(){
+                console.log("hi");
+            }
+
+            info(){
+                //this will call parent msg fun
+                super.msg();
+                //this will call local msg fun
+                this.msg();
+                console.log("manager");
+            }
+
+        }
+
+        class admin extends manager{
+
+        }
+
+        let admin1 = new admin("aditya", "web developer");
+
+        console.log(admin1);
+
+    </script>
+
+
+    <script>
+
+        /////mixin
+        //by this we can combine a already made object with a class and then can access its methods
+        //this is usefull to combine multiple objects with same class 
+
+        let usefullmethod = {
+            sayhi(){
+                console.log("hi....");
+            },
+
+            saybye(){
+                console.log("bye...");
+            }
+        };
+
+        class user{
+            constructor(){
+                this.name = "aditya";
+            }
+        }
+
+        class adminnew extends user{
+
+        }
+
+        //this will copy every function of usefullmethod to the prototype of adminnew
+        object.assign(adminnew.prototype, usefullmethod);
+
+        let admin2 = new adminnew();
+
+        //this will have the mixin object plus the extented class user
+        console.log(admin2);
+        
+        
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lists & table styling</title>
+    <style>
+
+        /* for lists */
+        ul{
+            list-style-type: square;
+            /* we can also put img  */
+            list-style-image: url('image/3img1.png');
+            /* to make icon inside the border of li, by dfault its ouside  */
+            list-style-position: inside;
+        }
+        ol{
+            list-style-type: upper-alpha;
+            list-style-type: upper-roman;
+        }
+        li{
+            /* to give border to items  */
+            border: 1px solid black;
+
+        }
+
+        /* for table  */
+
+        table{
+            border: 1px solid black;
+            /* by default its separate */
+            border-collapse: collapse;
+            /* to make big box table */
+            border-collapse: separate;
+            /* if giving only 1 then for all side if given 2 then for top bottom and left right  */
+            border-spacing: 15px 20px;
+            /* if any cell is empty then to hide it  */
+            empty-cells: hide;
+            /* to set table layout play around it fix focus on equal space distribution and auto focus on view  */
+            table-layout: auto;
+            table-layout: fixed;
+
+        }
+        caption{
+            border: 1px solid black;
+            /* to change location */
+            caption-side: bottom;
+            
+        }
+        tr{
+            /* it dont work on tr  */
+            border: 1px solid black;
+            
+        }
+        th{
+            border: 1px solid black;
+            height: 50px;
+            padding: 15px;
+            /* to set text loaction */
+            text-align: center;
+        }
+        td{
+            border: 1px solid black;
+            height: 25px;
+            padding: 5px;
+            /* to set text loaction */
+            text-align: left;
+            vertical-align: bottom;
+        }
+
+    </style>
+
+</head>
+<body>
+    <h2>unorder list</h2>
+    <ul>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+        <li>item 4</li>
+        <li>item 5</li>
+    </ul>
+
+    <h2>order list</h2>
+    <ol>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+        <li>item 4</li>
+        <li>item 5</li>
+    </ol>
+    <br>
+    <br>
+    <table>
+        <caption>css table</caption>
+        <tr>
+            <th>heading 1</th>
+            <th>heading 2 of the table</th>
+            <th>heading 3</th>
+        </tr>
+        <tr>
+            <td>content 1</td>
+            <td>content 2</td>
+            <td>content 3</td>
+        </tr>
+        <tr>
+            <td>content 5</td>
+            <td>content 6</td>
+            <td></td>
+        </tr>
+    </table>
+    
+</body>
+</html>

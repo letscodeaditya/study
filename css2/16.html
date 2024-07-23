@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>initial & inherit and object fit</title>
+    <style>
+        #green{
+            color: green;
+        }
+        #a{
+            color: red;
+        }
+        /* it will take colour of default color for link which is blue */
+        #initial{
+            color: initial;
+        }
+        /* it will take olor of parent which is green */
+        #inherit{
+            color: inherit;
+        }
+
+        /* the object fit property for div images */
+        #new{
+            border: 1px solid red;
+            width: 500px;
+            height: 400px;
+            /* if img big then will be fit and show whole but leave space  */
+            object-fit: contain;
+            /* in fill it will also show full image without leaving space but aspect ratio is disturbed */
+            object-fit: fill;
+            /* cover will take whole space and also not disturb aspect ratio but crop the image  */
+            object-fit: cover;
+            /* to set what we want if img is croped */
+            object-position: top left;
+        }
+    </style>
+</head>
+<body>
+    <div id="green">
+        green text <br>
+        <a href="" id="a">link1</a>
+        <a href="" id="initial">link2</a>
+        <a href="" id="inherit">link3</a>
+    </div>
+    <br>
+    <hr>
+    <div id="new"><img src="image/3img3.jfif" alt=""> </div>
+
+</body>
+</html>

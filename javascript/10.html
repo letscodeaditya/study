@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+
+    <script>
+        //we make function for a task which is being repeated
+
+        //we dont have to define the var in parameter
+        function nameoffuction(num){
+            for (let i = 0; i <= 10; i++) {
+                document.write(`${num} x ${i} = ${num*i}`);
+                document.write("<br>")
+                
+            }
+        }
+
+        //passing argument to function
+        nameoffuction(2);
+        nameoffuction(5);
+
+        //argument object-
+        // if we dont know how many argument does a user will pass in that case we can just leave parameter empty and all the parameter entered by user will automaticly saves in argument array inside function and we can also access it like array 
+
+        function nn(){
+            console.log(arguments[1]);
+        }
+        nn(1,5,6);
+
+
+        function addi(){
+            if(arguments.length == 0){
+                console.log("no arguments passed")
+            }else{
+                let sum = 0;
+                for(let i = 0; i<arguments.length; i++){
+                    sum = sum + arguments[i];
+                }
+                console.log(Sum);
+            }
+        }
+
+        //we can put func inside a var and call it by using var name or func name
+        let addition = addi;
+
+        addition(5,2);
+        addi(8,6,2);
+
+
+        //return in functions
+        // we use return to return value or var to be stored in var outside function
+        //in multi return = as a return is hit we come outside of function
+
+        function df(a,b) {
+            let d = a + b;
+            return d;
+        }
+
+        let c = df(4,5);
+        document.write(c);
+
+
+
+
+        //anonymous fun - also called function expression
+
+        //in this we dont give a function name its used directly in some other function parameter and to save memory
+
+        let show = function () {
+            console.log("hello");
+        };
+
+        show();
+
+        // or 
+        //will show after 3sec using function with giving name to it
+        setTimeout(function () {
+            console.log("hello");
+        },3000)
+
+
+
+
+
+        //immediately invoked function
+        
+        (function(){
+            let string = "hello";
+            console.log(string);
+            alert(string);
+        })();
+        //we use this ex- when we use external library in our code and we dont know the var declared in that so by using immediate invoke fun in all that external code we dont have to worry about same var name conflict in our code
+
+        
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

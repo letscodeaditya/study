@@ -1,0 +1,23 @@
+.app-conatiner{
+    display: flex;
+}
+
+.content{
+    width: 100%;
+}
+
+
+.side{
+    height: 1000px;
+    width: 200px;
+}
+
+.post-class{
+    margin: 20px;
+    width: 50%;
+}
+
+.create-post{
+    width: 50%;
+    margin: 20px 100px;
+}

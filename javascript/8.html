@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string manup</title>
+    <script>
+        let str = "dvhadvjabkdbjabb  \n jdnadnlankdn \t  jdbjabdjbjadb \" jbdj"; // \n will put it in nxt line and \t will leave tab space and use \ for printing special char
+
+        console.log(str);
+
+        // to find no. of char in string 
+        console.log(str.length);
+
+        //to print a particular char of string
+        console.log(str[3]);
+
+
+        //to print substring of a string
+        let b = "this is js tutorial is.";
+        let substr = b.substr(3,9); //here 3 is start index and till 9 index 
+        let substr1 = b.substring(3,9); //here 3 is start index and till 9 is position
+        console.log(substr);
+
+        //to find position of char in string
+        let pos = b.indexOf("js");
+        // if there is same char in a string then we can also specifiy pos to look after that
+        let pos = b.indexOf("is", 9);
+        //to search from last
+        let pos = b.lastIndexOf("is", 9);
+        //if there is string not present then it will store -1 in var
+
+        //to make strng upperchar and lowerchar
+        let k = b.toUpperCase();
+        let daad = b.toLowerCase();
+
+        //to replace a char in string
+        let repla = b.replace("js","javascript");
+
+        //to check if a string is present, it will return a boolean value 
+        let fin = b.includes("is");
+
+
+        //to concanate with inbuild function
+        let strg = "adi";
+        let strg2 = "ayush";
+        let str3 = strg.concat("", strg2, str);
+        console.log(str3);
+
+
+    </script>
+
+
+</head>
+<body>
+    
+</body>
+</html>

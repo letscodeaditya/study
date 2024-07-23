@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function & box sizing</title>
+
+    <style>
+        /* to use variable function  */
+        :root{
+            /* to declare and define our var, --name:property;  */
+            --primary-color: red;
+            --text-color: blue;
+        }
+
+        a{
+            padding: 10px 30px;
+            margin: 20px;
+            /* use var name in property  */
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        /* cal function  */
+        #fun{
+            background-color: aqua;
+            height: 200px;
+            /* cal is a function to calculate the value . here it is use to cal the width so that the white space remain as it is even when we adject browser page  */
+            width: calc(100% - 200px);
+        }
+
+        /* in css we give height and width to content but padding and margin is extra on top added to container if we specify, so to not take that extra space outside and the margin and padding take the content space inside then we use  */
+        #div1{
+            background-color: orangered;
+            width: 600px;
+            height: 150px;
+        }
+        #div2{
+            background-color: blueviolet;
+            width: 600px;
+            height: 150px;
+            padding: 50px;
+            border: 10px solid red;
+            /* by default in this the height and width we are giving is only set for content  */
+            box-sizing: content-box;
+            /* in border box margin and padding is also include and adjustment will be on content  */
+            box-sizing: border-box;
+        }
+
+    </style>
+    
+</head>
+<body>
+    <div id="fun"></div>
+    <br>
+    <hr>
+    <a href="www.google.com">google</a>
+    <br>
+    <br>
+    <hr>
+    <div id="div1">
+
+    </div>
+    <div id="div2">
+
+    </div>
+
+</body>
+</html>

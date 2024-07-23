@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+    <!-- <div class="container">
+
+
+        <div class="row">
+            //by this it will only give 2 column per row and rest will go under -->
+        <!-- <div class="row row-cols-2"> -->
+        <!-- will only take that much space as the content in those column-->
+        <!-- <div class="row row-cols-auto"> -->
+
+
+                        <!-- this will automaticaly give equal for all and will apply to all breakpoint 
+
+                        <div class="col bg-primary">div1</div>
+                        <div class="col bg-secondary">this is a div2</div>
+                        <div class="col bg-success">div3</div> -->
+            
+                        
+
+                        <!-- if we only give value to one column then the remain value will be given equaly to others
+                        
+                        <div class="col bg-primary">div1</div>
+                        <div class="col-2 bg-secondary">this is a div2</div>
+                        <div class="col bg-success">div3</div> -->
+            
+
+
+
+                        <!-- <div class="col bg-primary">div1</div>
+                        <div class="col-auto bg-secondary">this is a div2</div>   //by auto it will take column accordingto the content and rest will divided into other  
+                        <div class="col bg-success">div3</div> 
+
+
+
+                        <div class="col bg-primary">div1</div>
+                        <div class="col bg-secondary">this is a div2</div>
+                        <div class="col bg-success">div3</div>    
+
+        </div>
+    </div> -->
+
+
+
+
+    <!-- flexbox -->
+
+    <div class="container-fluid">
+
+        <!--vertical adjustment
+          if we give row height the column will also take that height by default (flexbox feature)
+        to stop this & adjust vertical use align-item-***(start,end,center) 
+
+        <div class="row align-items-end bg-warning" style="min-height: 400px;">
+
+             to give a specific column  
+            <div class="col align-self-center bg-primary">div1</div>
+            <div class="col align-self-end bg-secondary">div2</div>
+            <div class="col bg-success">div3</div>
+            <div class="col align-self-start bg-danger">div4</div>
+        </div> -->
+
+        
+        <!-- to adjust horizontal
+
+        we use justify-content-*(start
+        ,end - row will go extreme left
+        ,center
+        ,around - will leave equal space at both end of that row
+        ,evenly - will leave equal space at both end but in btw 2 column i wont have add up space ex- run this code
+        ,between - will leave space in between
+        ) -->
+
+        <div class="row justify-content-around bg-warning" style="min-height: 400px;">
+
+            
+            <div class="col-4 bg-primary">div1</div>
+            <div class="col-4 bg-secondary">div2</div>
+           
+        </div>
+    </div>
+    
+</body>
+</html>

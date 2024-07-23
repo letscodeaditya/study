@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>objects, methods, in-build meth, this & new keyword</title>
+
+    <script>
+
+        //object have property
+
+        //to declare a object
+        let nameofobj = {};
+
+        //obj with some property ad there value
+        let person = {
+            firstame: "aditya", lastname:"ayush"
+        }
+
+        //to access a property
+        console.log(person.firstame);
+        // or 
+        console.log(person["lastname"]);
+        //to see all property
+        console.log(person);
+
+
+        //to modify or add a new property
+        person.age = 25;
+        person.firstame = "ryben";
+
+        //to delete a property
+        delete person.firstame;
+
+        //using in operator to find a property in an object is present or not (trueorfalse)
+        console.log('height' in person); //'property name'
+
+
+        //for in loop
+        for(let key in person){
+            console.log(key + ":" +person[key]); //every property name is stored in key var so to also print value objectname.property/objn[property] name here key have property name
+        }
+
+
+        //any function related to object is method
+        
+        //ways to create
+
+        // 1.annoymus function
+        person.sayhello = function () {
+            console.log("hello");
+        }
+
+        //2.annoymus fun inside object itself
+        let newp = {
+            newgae: 50,
+            sayhello1: function () {
+                console.log('hello');
+            }
+        }
+
+
+        //3.normal fun
+        function great() {
+            console.log("hello");
+        }
+        person.sayhello = great;
+
+
+
+        //4.directly write fun content inside object body
+        let nwp = {
+            newgae: 50,
+            sayhello1 () {
+                console.log('hello');
+            }
+        }
+
+
+        //this keyword we use call property of the same object in itself and use other object property
+
+        let newa = {
+            sova: initiator ,
+            sayageent () {
+                console.log("sova is a"+ this.sayageent + "other object property"+ nwp.sayhello1);
+            }
+        }
+
+
+
+        //in-build objects 
+
+        //1. math object
+
+        //round off , power, square root
+        var x = Math.round(4.2);
+        console.log(x);
+        var y = Math.pow(10, 3);
+        vae u = Math.sqrt(4);
+
+        //find mini and max no. of all no.
+        var k = Math.min(100, 4, 5, 66, -6);
+
+        //p and many more values in object
+        console.log(Math.PI);
+
+        //to generate a random number
+        let r = Math.random(); // by default the range is 0-1
+        let p = Math.random() * 10; //now range is btw 0-9
+        let a = Math.floor(Math.random()*10);//to remove the decimal value
+
+
+        //date in-build object 
+        let ppp = new Date(); //give computer date
+        let ll = new Date("october 16, 2023 11:12:33");
+        let iii = ll.setDate(ll.getDate());
+        console.log(ll.getDate());
+
+         
+       //////////////// new keyword - to create object
+
+        var per = new Object();
+        per.name = "ryben";
+        per.age = 22;
+
+        /////getter and setter function
+
+        var po = {
+            name : "sova",
+            get getname(){
+                return this.name.toUpperCase();
+            },
+            set setname(n){
+                return this.name = n.toUpperCase();
+            },
+        }
+
+        console.log(po.getname);
+        po.setname = "jett"; //now it will store in capital letter        
+        
+
+
+
+
+        ////////constructor for object
+
+        function student(first, last, age, cls){
+            this.firstame = first;
+            this.lastname = last;
+            this.age = age;
+            this.class = cls;
+        }
+
+        var student1 = new student("chamber","valo",25,5);
+
+        //to add new property to a constructpr using prototype
+
+        student.prototype.nationality = "idian";
+
+
+
+        //////nested objects
+
+        var user = {
+            id: 101,
+            email: "ad@gmail.com",
+            personalinfo: {
+                name: "abc",
+                address: {
+                    street: "advad",
+                    city: "kolkata",
+                }
+            }
+        }
+        
+        console.log(user.personalinfo.address.city);
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

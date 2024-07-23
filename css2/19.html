@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position</title>
+    <style>
+        /* by default the position of element is static (normal flow)
+        types of position
+        static(default)
+        relative
+        fixed
+        absolute
+        we can put these property to only relative,fixed,absolute
+        top,bottom,left.right */
+        body{
+            height: 1000px;
+            
+        }
+
+        #parent{
+            border: 1px solid red;
+            padding: 20px;
+            width: 50%;
+            margin: 100px;
+        }
+        #one{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            display: inline-block;
+            /* in relative as we give spec top/left etc it will change its position from where its originally is and when it changes position it wont let any other it take its original pos  */
+            position: relative;
+            top: 50px;
+            left: 50px;
+        }
+        #two{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            display: inline-block;
+            /* in absolute it check parent element is there any position defined if not (parent is static) then it will go above parent utill it find position in any parent element till it hit body tag, here it will go to parent and then go to body tag to check and now it will cal according to body but if it find position in parent then ex- if here parent have relative then it will calculate from parent 
+            now it will leave its space(other will take its space) but stay there untill we give pos top/left etc to it  */
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+        #three{
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            display: inline-block;
+            /* in fixed the element wont move from its location even if we scroll the viewport /page , it will leave its place and other will occupy it so we have to give top/left etc  */
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div id="one"></div>
+        <div id="two"></div>
+        <div id="three"></div>
+    </div>
+    
+</body>
+</html>

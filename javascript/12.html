@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hoisting,</title>
+    
+    <script>
+        //hoisting is when we use a var first and declare it late in the code but js interpreter after excuting look for the declartion and put them on top of code
+        
+        var x; //this is a declaration and its value right now is undefine by default, initialized by js
+
+        let z; //in let js wont put undefined value for it, js dont initialize let
+
+        a = 10; //here js will automatically declare it on top var a; 
+
+        //to stop hoisting write this on top
+        "use strict"
+
+        //here it will show undefined bec js will only take the declaration part var y; not the assigment part =5; to top so it will show undefined  
+        console.log(y);
+        var y = 5;
+ 
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

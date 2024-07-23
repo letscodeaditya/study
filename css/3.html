@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css selectors</title>
+    <style>
+        h1{
+            color: brown;
+        }
+        div{
+            background-color: blue;
+        }
+        #red{
+            color: white;
+            background-color: red;
+        }
+        /* and , to group or more element to apply changes */
+        .blue,h3{
+            background-color: blue;
+            color: white;
+        }
+        /* *is for universal apply to all here we are removing margin and padding default value(we can now put each diff in our program) */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+</head>
+<body>
+    <div>
+        <h1>this is my css selectors</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore recusandae expedita tempore sequi ex nisi enim qui maiores deleniti hic?</p>
+        <div id="red">bg is red</div>
+        <span class="blue">first</span>
+        <span class="blue">second</span>
+        <span class="blue">third</span>
+        <h3>this is h3</h3>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>selector</title>
+
+    <!-- 1. element selector 
+    2. id selector - we have to give id and write property for indiviual
+    3. class selector - we can define class and property and give it to multiple element -->
+    <style>
+        /* element selector */
+        p{
+            color: red;
+        }
+        /* we use # for id */
+        #id1{
+            color: blue;
+        }
+        /* we use . for class  */
+        .new{
+            color: aliceblue;
+        }
+
+        /* we can also give 1 id and many class to same element */
+        #id2{
+            color: aqua;
+        }
+        .hi{
+            font-size: large;
+        }
+        .underline{
+            text-decoration: underline;
+        }
+        /* priority is given high to id then class and last element selector when only one of all this is defined if there is multiple class etc is defined then the last written one will be followed */
+
+
+    </style>
+</head>
+<body>
+    <p id="id1">this is para1</p>
+    <p class="new">this is para2</p>
+    <p id="id2" class="hi underline">this is para3</p>
+    <p>this is para4</p>
+    <p>this is para5</p>
+</body>
+</html>

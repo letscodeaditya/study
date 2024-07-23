@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>overflow & resizable</title>
+    <style>
+        /* overflow is when the content is bigger than the container then we can hide it, put scrollbar, overlaps etc. overflow to occur the container should have a max height/width limt which the content crossed */
+        #overflow{
+            background-color: aqua;
+            border: 1px solid red;
+            width: 500px;
+            height: 200px;
+            /* now there is a overflow , overflow is by default visble  */
+            overflow: hidden;
+            overflow: scroll;
+            /* but this will give both x and y axis scroll and if the content is only overflowing on y axis then  */
+            overflow-x: hidden;
+            overflow-y: scroll;
+            /* if we dont know that content may or may not overflow then we can put auto  */
+            overflow: auto;
+        }
+        /* as we know textarea property user can change size of container but by using resize none we can stop it   */
+        textarea{
+            resize: none;
+        }
+        /* we can put the resize property to any block element like div we want  */
+        #overflow{
+            resize: both;
+            /* if we want only horizontal  */
+            resize: horizontal;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="overflow">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis eveniet exercitationem hic! Cupiditate adipisci corporis quia, eveniet possimus omnis voluptatum dignissimos facere reiciendis minima explicabo, dolorum, molestias delectus perferendis voluptatibus numquam. Placeat, minima quod? Eos at doloremque placeat, similique illo ex! Expedita, labore illum veniam perspiciatis inventore dolores distinctio veritatis tempora placeat fugit tempore laborum quia? Numquam tenetur repellat corporis maiores, at officiis ducimus quo adipisci vel voluptatibus. Nulla quos eligendi vero eum porro error, in sed, eveniet modi tempora eius neque optio necessitatibus natus suscipit iure quas enim alias ea odio sint aut ratione voluptatem corporis. Alias mollitia nisi eos aperiam sunt molestias natus voluptatum quod suscipit id aut, error officia architecto soluta quasi perspiciatis pariatur neque autem velit totam temporibus et nulla impedit placeat. Ex iste neque suscipit quo minus voluptatem vero tempore. Doloremque, quibusdam ipsam cupiditate autem harum modi eos neque eaque vero quia reiciendis laudantium architecto possimus sunt vitae consectetur sit ducimus tenetur beatae aliquid. Nam soluta quis veniam beatae velit molestiae cum impedit saepe qui dolorum distinctio, itaque fugiat esse, doloremque laboriosam! Et quasi sapiente tenetur repellendus eos hic quia reiciendis facilis mollitia voluptatum. Dolore, eius nostrum. Ipsa velit repudiandae, perferendis asperiores nesciunt vitae expedita.
+        </p>
+    </div>
+    <br>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+</body>
+</html>

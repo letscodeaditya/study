@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pseudo class & element</title>
+    <style>
+        /* a element special state is pseudo class, syntax selector:pseudo class . example - anker tag a:hover etc
+        check pseudo on net for more classes */
+
+        /* this will select 1st item in list(without giving id)  */
+        li:first-child{
+            color: red;
+        }
+        /* for giving style to any list iten , we can give odd even also */
+        li:nth-child(3){
+            color: blue;
+        }
+
+        /* elements syntax- selector::pseudo element{} */
+        p::first-letter{
+            font-size: 35px;
+            color: red;
+        }
+        /* we can add text or image in css to html here we can add before and after the element  */
+        h1::before{
+            content: url("image/3img1.png");
+            content: "new added line to html";
+        }
+
+        /* to make custom highlight when user select a para, :: is for universal selector  */
+        ::selection{
+            color: red;
+            background: yellow;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    
+    <h1>this is heading</h1>
+
+    <p>this is p tag</p>
+    <p>this is p tag</p>
+    <p>this is p tag</p>
+    <p>this is p tag</p>
+    <p>this is p tag</p>
+<br>
+
+    <ul>
+        <li>list item</li>
+        <li>list item</li>
+        <li>list item</li>
+        <li>list item</li>
+    </ul>
+
+    <br>
+    <hr>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, quibusdam ex, in, cumque voluptas asperiores excepturi maiores sint error voluptatem accusamus odit dolorum harum magni aspernatur inventore. Ut, fuga quia? Nulla molestias quia earum maxime pariatur dignissimos asperiores, voluptate reiciendis natus dolor magni, hic quos eos nesciunt excepturi autem inventore eaque consequuntur aliquid suscipit odio rerum quae fuga! Incidunt est voluptatem doloribus eveniet totam dicta, inventore iste omnis unde hic quaerat itaque ipsa molestias autem porro nesciunt animi et adipisci a rerum illo beatae laborum soluta exercitationem! Quia quam tempore illum laudantium dicta quos aliquam nostrum dolorum repudiandae enim asperiores consequuntur, dolores recusandae eligendi necessitatibus quidem distinctio, labore earum. Natus pariatur, magni temporibus illum eos libero optio voluptate odit, at enim accusantium asperiores quaerat ipsa ratione adipisci deleniti similique nisi deserunt porro earum placeat reiciendis perspiciatis quidem! Eveniet quo molestiae labore ullam quas. Repellendus voluptatibus soluta cumque voluptas laborum tenetur officiis aspernatur excepturi iusto repellat, facere eum quas officia laboriosam ipsum mollitia consectetur quo quidem, eos libero in? Unde in recusandae dolorum nulla numquam voluptas ipsa reprehenderit doloremque rerum! Necessitatibus maxime quidem rem tenetur earum alias voluptate id nobis non pariatur corporis, officiis ab exercitationem, deserunt eius perspiciatis quod ratione?</p>
+</body>
+</html>

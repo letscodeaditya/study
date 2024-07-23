@@ -1,0 +1,106 @@
+git config --global user.name "username"
+git config --global user.email "email"
+git config --list
+
+
+
+clone - to copy the git file in local machine
+-git clone url of file
+
+use ls -hidden to see hidden file in the folder like git file 
+
+status - it will tell the current all file status like modified or untracked
+modified mean we did some changes to a file locally which is also present in repo but not commited
+untracked means we created a new file in local
+-git status
+
+
+staged - file ready to be commited
+
+add - adds new or changed files in your working repo to git stagging area
+-git add filename
+-git add . (for all)
+
+
+commit - it is the record of change
+-git commit -m "some message"
+
+
+push - upload loacl file(new created) to remote repo
+-git push origin main 
+//here origin is the name we given for the repo where we are pushing and main is the branch//
+
+
+
+init
+when we create a new file/repo loaclly then to make it a git repo use init command
+
+//to make new file in terminal//
+cd..
+mkdir filename
+cd filename
+git init
+
+//to add our new local repo in remote firt create a new repo in github //
+then run this first
+-git remote add origin link  //here origin is the name we are giving to new repo 
+
+-git remote -v  //to verfiy the remote
+-git branch //to verfiy branch
+-git branch -m newname //to rename branch
+
+//to push to our new repo in remote//
+-git push origin main
+    or
+-git push -u origin main  //so that next time we dont have to write origin main everytime when we push
+
+
+
+
+branch
+to create multiple instants of a project to work on new feature by new group
+
+-git branch                  //to check branch
+-git branch -m newname       //to rename branch
+-git checkout -b newbranch   //to create new branch
+-git checkout branchname     //to navigate
+-git branch -d branchname    //to delete
+
+
+file of one branch is independent of other changes in one branch wont affect other
+
+//to push our new branch to remote//
+-git push origin branchname
+
+
+
+merging
+
+2 ways
+1st - we can compare two branch before merge
+-git diff branchname
+-git merge branchname  //to merge the branch with current branch
+then push that merge branch to remote 
+
+
+2nd - pull request(pr) to give request to main branch for merge in github 
+
+
+
+pull
+-to to fetch and download content from remote rpo to local to match the content
+-git pull origin branchname
+
+
+merge conflicts
+when we try to merge 2 branch with a file having same line but little different code from both branch file then this cause a conflict 
+if they both have seperate line of code the no merging error  
+
+
+undoing changes
+
+case 1 - staged changes after git add
+-git reset filename
+-git reset  //for all
+
+

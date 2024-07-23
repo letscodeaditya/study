@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>opacity & gradient</title>
+
+    <style>
+        #colorbox{
+            background-color: green;
+            height: 200px;
+            width: 500px;
+            margin-bottom: 20px;
+            /* opacity range is from 0 to 1  */
+            opacity: 0.5;
+        }
+        #colorbox2{
+            height: 300px;
+            width: 200px;
+            background-color: red;
+            margin-top: -100px;
+        }
+        /* we can also use opacity when mouse is on that element hover  */
+        img:hover{
+            opacity: 0.7;
+        }
+
+        /* we use gradient to mix different colour, in css there is two type radial and linear   */
+        /* we use gradient by background imag  */
+        #grade{
+            height: 500px;
+            border: 1px solid grey;
+            /* linear  */
+            background-image: linear-gradient(green,red,blue);
+             /* to set direction */
+            background-image: linear-gradient(to right, green,red,blue);
+            background-image: linear-gradient(to bottom right, green,red,blue);
+            background-image: linear-gradient(120deg, green,red,blue);
+
+            /* radial */
+            background-image: radial-gradient(red,blue);
+            background-image: radial-gradient(circle,red,blue);
+            background-image: radial-gradient(circle,red,blue,green);
+            /* to set how mu9ch a color  */
+            background-image: radial-gradient(circle,red 20%,blue 30%,green 50%);
+
+        }
+    </style>
+</head>
+<body>
+    <div id="colorbox">
+    </div>
+    <div id="colorbox2"></div>
+    <img src="image/3img3.jfif" alt="">
+    <br>
+    <div id="grade">
+
+    </div>
+</body>
+</html>

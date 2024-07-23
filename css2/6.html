@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>padding & margin</title>
+    <style>
+        /* the gap btw content and border is padding  */
+        #p{
+            border: 1px solid red;
+            /* increasing 50px at the top  */
+            padding-top: 50px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            padding-right: 10px;
+            
+            /* shortcut one line  clock wise top right bottom left for all side and only two for top/bottom and left/right */
+            padding: 25px 25px;
+
+        }
+        
+        /* the gap btw border and other element is margin, margin btw to element is by defualt 0  */
+        .div1{
+            border: 1px solid blue;
+            padding: 50px 50px;
+        }
+        body{
+            border: 5px dotted black;
+        }
+        #marg{
+            /* same clock wise for all side */
+            margin-top: 50px;
+            margin: 5px 10px 30px 5px;
+
+            /* we can use negative no. to overlap border with another element but not in padding */
+            margin-bottom: -50px;
+        }
+
+
+        /* imp - when 2 margin 2 element collaps to each other ex= top element bottom margin is 50px and bottom elemnt top margin is 30px then the space which will be left btw the two will not be the add up value 80 but 50 (bigger of 2)
+        this apply only on top and bottm for left and right the space will be add up of 2 margins  */
+        .div2{
+            border: 5px dashed lime;
+        }
+        #marg3{
+            margin-bottom: 50px;
+        }
+        #marg4{
+            margin-top: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="p">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis ad exercitationem magnam repudiandae quibusdam libero hic necessitatibus minus voluptatibus sequi.
+        </p>
+    </div>
+    <br>
+    <br>
+    <div class="div1">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque minus tempora magni numquam, perferendis voluptatibus iusto ipsum quam officia cupiditate suscipit tempore porro, corporis quos, in ea cum optio. Nam.
+        </p>
+    </div>
+    <div class="div1" id="marg">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque minus tempora magni numquam, perferendis voluptatibus iusto ipsum quam officia cupiditate suscipit tempore porro, corporis quos, in ea cum optio. Nam.
+        </p>
+    </div>
+    <div class="div1">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque minus tempora magni numquam, perferendis voluptatibus iusto ipsum quam officia cupiditate suscipit tempore porro, corporis quos, in ea cum optio. Nam.
+        </p>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="div2" id="marg3">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque minus tempora magni numquam, perferendis voluptatibus iusto ipsum quam officia cupiditate suscipit tempore porro, corporis quos, in ea cum optio. Nam.
+        </p>
+    </div>    
+    <div class="div2" id="marg4">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque minus tempora magni numquam, perferendis voluptatibus iusto ipsum quam officia cupiditate suscipit tempore porro, corporis quos, in ea cum optio. Nam.
+        </p>
+    </div>    
+</body>
+</html>

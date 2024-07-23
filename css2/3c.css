@@ -1,0 +1,41 @@
+#bg{
+    background-color: yellow;
+    /* to insert image in background (this will get repeated by default if size small) */
+    background-image: url("image/3img3.jfif");
+    /* to change property like no repeat, repeat only in x or y axis */
+    background-repeat: no-repeat;
+    background-repeat: repeat-x;
+
+    
+    /* to change position of bg image in x and y axis */
+    background-position: 2% 10%;
+    background-position: center left;
+
+
+    /* to change bg image size in x and y axis */
+    background-size: 700px 700px;
+    /* for full */
+    /* it will auto fill but cut some parts */
+    background-size: cover;
+    /* it will auto fill without image cut or disort but sometime makes it small so adjust div accordingly  */
+    background-size: contain;
+    /* this will cover whole but image will be disored most of the time */
+    background-size: 100% 100%; 
+
+
+    /* to make bg image still or scrolable */
+    background-attachment: fixed;
+
+    /* shortcut to write all these in one line */
+    background: red url("image/3img3.jfif") no-repeat fixed 5% 10%;
+
+    /* for using multiple image at once, use transparent best */
+    background-image: url("image/3img1.png"), url("image/3img2.png");
+    background-position: top left, bottom right ;
+    
+}
+
+
+body{
+    background-color: red;
+}

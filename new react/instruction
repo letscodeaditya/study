@@ -1,0 +1,18 @@
+to create a react app 2 ways
+
+1. cra
+
+
+2.vite
+install vite(in cmd) - npm create vite@latest
+give name of project -> select react -> javascript
+  cd projectname
+  npm install
+  npm run dev - to start 
+
+
+for vite app structure
+see ss 1
+
+
+

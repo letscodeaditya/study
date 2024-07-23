@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cursor , priority , box shadow</title>
+
+    <style>
+        div{
+            border: 1px solid red !important;
+            /* cursur is by default auto means web browser setting will be shown  */
+            cursor: all-scroll;
+            cursor: grab;
+            cursor: crosshair;
+        }
+
+        /* for box shadow  */
+        #new{
+            border: 1px solid green;
+            width: 500px;
+            background-color: yellowgreen;
+            margin: 100px;
+            padding: 10px;
+
+            /* 1 x-axis 2 y-axis 3 blur radius 4 spread radius 5 color  */
+            box-shadow: 10px 20px 15px 3px grey;
+            /* to make shadow inside box  */
+            box-shadow: 10px 20px 15px 3px grey inset;
+            /* to make more tham one shadow outside  */
+            box-shadow: 10px 20px 15px 3px grey, -10px 20px 15px 3px red;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- here style have more priority than the head one so to make head more add !important -->
+    <div style="border: 1px solid blue;">
+        <p>
+            this is a head 
+        </p>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div id="new">
+        
+            this is a box
+        
+    </div>
+
+</body>
+</html>

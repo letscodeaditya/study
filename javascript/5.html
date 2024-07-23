@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>while, do-while loops , break and continue , nested loop, lable</title>
+
+    <script>
+        // while loop
+
+        let counter = 0;
+        while (counter <= 10) {
+            document.write("hello");
+            counter++;
+        }
+
+        //sum of all even number
+
+        let c =1;
+        let sum = 0;
+
+        while (c <= 100) {
+            if (c % 2 == 0) {
+                sum = sum + c;
+            }
+            c++;
+        }
+        document.write(sum);
+
+        // do while loop(statement will atlest run one time before checking condition)
+
+        let count = 0;
+        do {
+            document.write("hi");
+        } while (count <= 10);
+
+
+        // for loop
+
+        for (let h = 0; h <= 10; h++) {
+            document.write("hey");            
+        }
+
+
+        //break
+        for (let coun = 0; coun <= 10; coun++) {
+            if (coun == 5) {
+                break;  //it will come out of the loop and code when this if is true and see break
+            }
+            document.write(coun);
+            document.write('<br>'); 
+        }
+
+        //contiune
+        for (let coun = 0; coun <= 10; coun++) {
+            if (coun == 5) {
+                continue;  //it will come out of the loop but then go to coun++ and repeat the loop again
+            }
+            document.write(coun);
+            document.write('<br>'); 
+        }
+
+        //nested for
+        for (let coun = 0; coun <= 10; coun++) {
+            document.write(coun);
+            document.write('<br>'); 
+
+            //this will print heheh with the no. 2 times 
+            for (let coun2 = 1; coun2 < 3; coun2++) {
+                document.write("heheh");
+            }
+        }
+
+
+        //to give name to loops
+        nam: for (let coun = 0; coun <= 10; coun++) {
+            document.write(coun);
+            document.write('<br>'); 
+            
+            for (let coun2 = 1; coun2 < 3; coun2++) {
+
+                if (coun == 3) {
+                    break nam; //even though we wrote break inside nested for loop but still by telling which loop to end by giving lable name
+                }
+                document.write("heheh");
+                document.write("<br>");
+                
+            }
+        }
+
+
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

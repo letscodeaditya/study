@@ -1,0 +1,10 @@
+
+
+
+8 - font and font family (external & downloaded)
+9 - units (% , vw, px)
+10 - cursor , priority , box shadow
+11 - opacity & gradient
+12 - filter & sprite(multi pic in 1)
+13 - overflow(scroll) & resizable
+14 - lists & table styling

@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callbacks, promise, fetch api</title>
+</head>
+
+<body>
+
+    <!-- <script>
+
+        function loadscript(src, callback){
+            var script = document.createElement("script");
+            script.src = src;
+            script.onload = function(){
+                console.log("loaded script with src: " + src);
+                callback(null, src);
+            }
+            script.onerror = function(){
+                console.log("error loading script with src:" + src);
+                callback(new error("src got some error"))
+            }
+            document.body.appendChild(script);
+        }
+
+        function hello(error, src){
+            if(error){
+                console.log(error);
+                return
+            }
+            alert('hello world' + src);
+        }
+
+        function goodmorning(src){
+            alert('goodmorning' + src);
+        }
+
+        loadscript(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js", hello)
+
+    </script> -->
+
+
+    <!-- promise ,then and catch   -->
+
+    <!-- promise ya toh resolve hota hai ya reject toh we can get that resolve from then and reject from catch   -->
+
+    <!-- <script>
+        let q1 = new Promise((resolve, reject)=>{
+            console.log("promise is pending")
+            setTimeout(() => {
+                console.log("im promise and resolved")
+                resolve(true)
+            }, 5000);
+        })
+        let p2 = new Promise((resolve, reject)=>{
+            console.log("promise is pending")
+            setTimeout(() => {
+                console.log("im promise and rejected")
+                reject(new Error("im an error"))
+            }, 5000);
+        })
+
+        q1.then((value)=>{
+            console.log(value)
+        })
+        // /////handling error as in p2 it is rejected
+        // p2.catch((Error)=>{
+        //     console.log("some error occur")
+        // })
+
+        //we can do both then and catch together resolve for then and catch for reject
+        p2.then((value)=>{
+            console.log(value)
+        },(Error)=>{
+            console.log(Error)
+        })
+
+    <!-- </script>
+
+
+ promise chain  
+ all then will get value from there prev then
+
+    <script>
+        let p1 = new Promise((resolve, reject)=>{
+            setTimeout(()=>{
+                console.log("first resolve")
+                resolve(true)
+            },2000)
+        })
+
+        p1.then((value)=>{
+            console.log(value)
+            let p2 = new Promise((resolve, reject)=>{
+                setTimeout(() => {
+                    resolve("promise p2")
+                }, 2000);
+            })
+            return p2
+        }).then((value)=>{
+            console.log("we are done")
+            return 2
+        }).then((value)=>{
+            console.log("now we are really done")
+        })
+    </script> 
+
+
+ loadscript with promise 
+    <script>
+        const loadscript = (src)=>{
+            return new Promise((resolve,reject)=>{
+                let script = document.createElement("script")
+                script.type="text/javascript"
+                script.src=src
+                document.body.appendChild(script)
+                script.onload=()=>{
+                    resolve("script has been loaded sir")
+                }
+                script.onerror=()=>{reject(0)}
+            })
+        }
+
+        let a1 = loadscript("https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js")
+
+        a1.then((value)=>{
+            console.log(value)
+        }).catch((error)=>{
+            console.log("having issue")
+        })
+    </script> -->
+
+
+    <!-- multiple handlers  -->
+    <!-- each handler is independent as no value is passed from one to its next then like in case of promise chaining thats why they all get executed parrally -->
+
+    <!-- <script>
+        let b1 = new Promise((resolve,reject)=>{
+            setTimeout(() => {
+                console.log("b1 alert")
+                resolve("im resolve")
+            }, 2000);
+        })
+
+        b1.then((value)=>{
+            console.log("cong first then,",value)
+            
+            //this part will go in background and wait after that last then will get executed
+           let na = new Promise((resolve, reject)=>{
+                setTimeout(() => {
+                    console.log("hi")
+                    resolve(5)
+                }, 3000);
+            })
+            //nxt then will wait for the pass/return value of promise but uske baad wala then will excute  
+            //this return will wait as there is timeout
+             return na
+            // this return will directly pass value tp nxt then
+            // return 4
+        }).then((value)=>{
+            //this will get value from inside promise
+            console.log(value)
+        })
+
+        b1.then(()=>{
+            console.log("cong second then")
+        })
+
+    </script> -->
+
+
+
+    <!-- exercise -->
+
+    <script>
+
+    //get all three prmoise at the same time    
+
+    //  let c1 = new Promise((resolve, reject) => {
+    //             setTimeout(() => {
+    //                 resolve("1st")
+    //             }, 1000);
+    //         })
+
+    //  let c2 = new Promise((resolve, reject) => {
+    //             setTimeout(() => {
+    //                 resolve("2st")
+    //             }, 2000);
+    //         })
+
+    // let c3 = new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             resolve("3st")
+    //         }, 3000);
+    //     })
+    
+    // // 1.method with variable
+
+    //     let a 
+    //     let b 
+
+    //     c1.then((value)=>{
+    //         a = value
+    //     })
+    //     c2.then((value)=>{
+    //         b = value
+    //     })
+
+    //     c3.then((value)=>{
+    //         console.log(a,b,value)
+    //     })
+        
+
+
+     //2.method    
+
+        // c3.then((value1)=>{
+        //     c1.then((value)=>{
+        //         console.log(value)
+        //     })
+        //     c2.then((value)=>{
+        //         console.log(value)
+        //     })
+        //     console.log(value1)
+        // })
+    
+     //3.method
+     
+     // let c3 = new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         resolve("3st")
+        //     }, 3000);
+        // }).then((value) => {
+        //     console.log(value)
+        //     return c2 = new Promise((resolve, reject) => {
+        //         setTimeout(() => {
+        //             resolve("2st")
+        //         }, 2000);
+        //     })
+        // }).then((value) => {
+        //     console.log(value)
+        //     return c1 = new Promise((resolve, reject) => {
+        //         setTimeout(() => {
+        //             resolve("1st")
+        //         }, 1000);
+        //     })
+        // }).then((value=>{
+        //     console.log(value)
+        // }))
+
+    </script>
+
+
+    <!-- promise api
+    6 static methods
+    1. promise.all
+    2. promise.all settled
+    3. promise.race
+    4. promise.any
+    5. promise.resolve -->
+
+    <script>
+
+    let c1 = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve("1st")
+                }, 4000);
+    })
+
+    let c2 = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve("2st")
+                }, 2000);
+    })
+
+    let c3 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("3st")
+            }, 3000);
+    })
+    let c4 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                reject(new Error ("new error"))
+            }, 1000);
+    })
+
+
+
+    //only if all promise will get resolve
+    // let promise_all = Promise.all([c1,c2,c3])
+    // promise_all.then((value)=>{
+    //     console.log(value)
+    // })
+
+    //if any promise is rejected
+    // let promise_alls = Promise.allSettled([c1,c2,c3,c4])
+    // promise_alls.then((value)=>{
+    //     console.log(value)
+    // })
+        
+    //race will give any value which execute first even if it resolve or reject
+    let promise_race = Promise.race([c1,c2,c3])
+    promise_race.then((value)=>{
+        console.log(value)
+    })
+
+    //any it will give only first resolve valuse
+    let promise_any = Promise.any([c1,c2,c3]) 
+    promise_any.then((value)=>{
+        console.log(value)
+    })
+
+
+
+
+    </script>
+
+
+
+
+
+    <script>
+        async function wether(){
+            let delhiweather = new Promise((resolve,reject)=>{
+                setTimeout(() => {
+                    resolve("27 deg")
+                }, 2000);
+            })
+            let bangloreweather = new Promise((resolve,reject)=>{
+                setTimeout(() => {
+                    resolve("21 deg")
+                }, 2000);
+            })
+            
+            console.log("loading delhi weather")
+            let delhiw = await delhiweather
+            console.log("fetching delhi weather" + delhiw)
+
+            console.log("loading banglore weather")
+            let banglorew = await bangloreweather
+            console.log("fetching banglore weather" + banglorew)
+
+            return[delhiw,banglorew]
+
+        }
+
+        console.log("welcome to weather control")
+        let a = wether()
+        a.then((value)=>{
+            console.log(value)
+        })
+
+    </script>
+
+
+
+    <!-- try and catch  -->
+
+    <script>
+
+        setTimeout(() => {
+            console.log("hi")
+        }, 1000);
+
+        try {
+            console.log(thiscauseerror)
+        } catch (error) {
+            console.log("this excute to handle error")
+        }
+
+        setTimeout(() => {
+            console.log("name")
+        }, 2000);
+
+        //we should not write a timeout inside a try because a timeout will get excuted even when after timeout it can throw error but as its in try it will take it as succese of code move on
+
+        try {
+            setTimeout(() => {
+                console.log(errorr)
+            }, 1000);
+        } catch (error) {
+            console.log("this wont get excuted even after error")
+        }
+
+        //solution
+
+        try {
+            setTimeout(() => {
+                try {
+                    console.log(errorr)
+                } catch (error) {
+                    console.log("error handled")
+                }
+            }, 1000);
+        } catch (error) {
+            console.log("this wont get excuted even after error")
+        }
+
+    </script>
+
+
+    <!-- error object and custom error  -->
+    <script>
+        try {
+            let age = prompt("enter your age")
+            age= Number.parseInt(age)
+            if(age>150){
+                //here it could be any name at the place of reference error
+                throw new ReferenceError("this is not true")
+            }
+        } catch (error) {
+            console.log(error.name)   
+            console.log(error.message)   
+            console.log(error.stack)   
+        }
+    </script>
+
+
+    <!-- finally  -->
+
+    <script>
+
+        //finally is use when we need that part to run anyway even the above encounter error  or even return
+
+        const f = ()=>{
+            try {
+                let a=0;
+                console.log("program ran successfully")
+                //even after return finally will also get executed
+                return
+            } catch (error) {
+                console.log("this is an error")
+                //here there is a error in catch itself but still finally will run
+                console.log(p)
+            }
+            finally{
+                console.log("always")
+                //close the file
+                //exit loop
+                //write to the log file etc
+            }
+        }
+
+        f()
+
+    </script>
+
+
+    <!-- fetch api -->
+
+    <script>
+        let p = fetch('https://goweather.herokuapp.com/weather/NY')
+        p.then((value1)=>{
+            console.log(value1.status)
+            console.log(value1.ok)
+            return value1.json()
+        }).then((value2)=>{
+            console.log(value2)
+        })
+    </script>
+ 
+</body>
+
+</html>

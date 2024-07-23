@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event bubbling , BOM window object</title>
+
+    <style>
+        body{
+            padding: 100px;
+            background-color: aliceblue;
+        }
+        #mydiv{
+            padding: 50px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    
+<!-- event bubbling(child first) - an event start at the most specific element and then flows upward toward the least specific element 
+        .button
+        .div with id container
+        .body 
+        .html
+        .document -->
+
+<!-- event capturing - an event start at the least specific element and flows downward toward the most specific element
+        .document
+        .html 
+        .body 
+        .div with the id container 
+        .button  -->
+
+    <!-- use addEventListener(event,fun,usecapture)     -->
+    <!-- the default value is false,which will use bubbling if use true then uses capturing  -->
+
+    <div id="mydiv">
+        <button id="btn">click me</button>
+    </div>
+
+    <script>
+
+        let d = document.getElementById("mydiv");
+        let b = document.getElementById("btn");
+
+        //default is false bubbling
+        b.addEventListener('click', btnclicked);
+        d.addEventListener('click', divclicked);
+        document.body.addEventListener('click', bodyclicked);
+        //add true for capturing
+        b.addEventListener('click', btnclicked, true);
+        d.addEventListener('click', divclicked, true);
+        document.body.addEventListener('click', bodyclicked, true);
+
+        function btnclicked(){
+            console.log("button clicked....");
+        }
+        //to stop bubbling or capturing
+        function btnclicked(event){
+            console.log("button clicked....");
+            event.stopPropagation();
+        }
+
+        function divclicked(){
+            console.log("div clicked....");
+        }
+
+        function bodyclicked(){
+            console.log("body clicked.....");
+        }
+
+    </script>
+
+
+    <!-- to prevent default  -->
+    <!-- we can use this to check the form etc before submiting it and many thing -->
+
+    <a href="https://www.youtube.com/watch?v=emm0uGDGg2o" id="anchor">click me</a>
+
+    <form action="" id="myform">
+        <input type="text">
+        <input type="submit">
+    </form>
+
+    <script>
+        let link = document.getElementById("anchor");
+
+        link.addEventListener('click', function (e) {
+            console.log("link clicked....");
+            a.preventDefault();
+        });
+
+        let form = document.getElementById("myform");
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+        });
+    </script>
+
+    <!-- the browser object model(BOM) is used to interact with the browser.
+    the window object represent a window in browser. 
+    an object of window is created automatically by the browser. 
+
+    all global javasc objects, function, and variables with the var keyword automatically become members of the window object.
+    global var are properties of the window object. 
+    global function are method of the window object  -->
+
+    
+    <script>
+        // variable declare by var only is property of window not by let
+        var x = "hello";
+        //we can also wirte only x
+        console.log(window.x);
+
+
+        // window is default object of a browser 
+        //if we make a function it become a method of window
+        function xyz(){
+            console.log("hi");
+        }
+
+        //we can also write only xyz() window is default
+        window.xyz();
+
+        ///////////inner height & width - page dimension
+        ///////////outer height & width - full browser dimension
+
+        console.log(window.innerHeight);
+        console.log(window.innerWidth);
+
+        console.log(window.outerHeight);
+        console.log(window.outerWidth);
+
+    </script>
+
+
+<!-- to make pop up page      -->
+
+    <button id="btn1">google</button>
+    <button id="btn2">yahoo</button>
+    <button id="btn3">close</button>
+
+    <script>
+        let btn1 = document.getElementById("btn1");
+        let btn2 = document.getElementById("btn2");
+        let btn3 = document.getElementById("btn3");
+        let url = "https://www.youtube.com/watch?v=emm0uGDGg2o";
+        let features = "height=500,width=500";
+        let win;
+
+
+        btn1.addEventListener('click', function () {
+            // window.open(url, name, features);
+            //we can also directly write without making var for it
+            window.open(url, 'google', features)
+        
+        });
+        //here we use name for ex we want to open a new site in our pop up if the old one is already open then in the same popup new will open using same google name
+
+        btn2.addEventListener('click', function(){
+            //window.open returns a id when we can use for close up
+            win = window.open('https://www.yahoo.com', 'google');
+        });
+
+        ///////// to close a pop up 
+        //we use a popup window id by which we can close it so here its win 
+
+        btn3.addEventListener('click', function(){
+            win.close();
+        });
+
+
+    </script>
+     
+<!-- time out and time interval -->
+
+    <button id="btna">clear interval</button>
+
+    <script>
+        //time out - it will wait for a time given by user then run the function given
+
+        setTimeout(myfunction, 5000); //5sec
+        let timeoutid = setTimeout(myfunction, 5000);
+        
+        function myfunction(){
+            alert("hi");
+        }
+        
+        //this will return a id which we can use to close/clear a timeout waiting to excute if a particular condition is occur
+
+        clearTimeout(timeoutid);
+
+
+        /////time interval - it will repeat the task in giving period of time automatically 
+
+        var t1 = setInterval(fun, 2000); //2sec
+
+        function fun(){
+            console.log("hi");
+        }
+
+        let bt = document.getElementById("btna");
+
+        bt.addEventListener('click', function(){
+            clearInterval(t1);
+        });
+
+    </script>
+
+
+<!-- location object  -->
+
+    <button id="butto" onclick="fun()">redirect to yt</button>
+    <script>
+
+        //will give full url
+        console.log(location.href);
+        //will give only path from url
+        console.log(location.pathname);
+        //will give only protocol use on that site
+        console.log(location.protocol);
+
+        ////to redirect to different site on same page
+
+        function re(){
+            // 1st method 
+            window.location = "https://www.youtube.com/watch?v=emm0uGDGg2o";
+            //2nd method
+            location.href = "https://www.youtube.com/watch?v=emm0uGDGg2o";
+
+            //3rd method both 1&2 call this function only
+            location.assign("https://www.youtube.com/watch?v=emm0uGDGg2o");
+
+            ////to remove history of prev site after redirecting to new one
+            location.replace("https://www.youtube.com/watch?v=emm0uGDGg2o");
+
+
+            ///to make a reload a page
+            location.reload();
+        }
+
+    </script>
+
+    <!-- navigator and screen object (search web)
+    mainly use for getting info on users -->
+
+    <script>
+        console.log(navigator.userAgent);
+        console.log(screen.height); //give user montior height not the browser
+    </script>
+
+</body>
+</html>

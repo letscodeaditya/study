@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display property</title>
+    <style>
+        /* every elememnt in css is a rectangular box and how it will behave it depend upon display property every, element have a display property by default ex-
+        1.block - block start with new line bec it take full width 100% and we can give heigth and width
+            div,p,h1-6,form
+        2.inline - inline start from there only if there is one more inline element bec it dont take full width and we can give height and width
+            a,img,span
+        3.inline-block
+        4.none
+        we can change the display property also block to inline and inline to block 
+         */
+
+         .display{
+            border: 1px solid red;
+            width: 50%;
+            height: 100px;
+            /* to change the property of this div block to inline(all inline property) or inline block(dont start with new line & we can apply height and width) */
+            display: inline;
+            display: inline-block;
+         }
+         #div1{
+            /* by both this div is hidden but in display none the div leaves its space but in visibility none its just hidden but still take the original space  */
+            display: none;
+            visibility: hidden;
+         }
+    </style>
+</head>
+<body>
+    <div class="display" id="div1">this is display</div>
+    <div class="display">this is display</div>
+</body>
+</html>

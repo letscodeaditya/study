@@ -1,0 +1,30 @@
+.addcont{
+    display: flex;
+    align-items: center;
+    
+}
+
+.inputitem{
+    width: 40%;
+    margin: 10px 20px;
+}
+.inputitem input{
+    width: 100%;
+    height: 50px;
+}
+
+.inputdate{
+    width: 20%;
+    margin: 10px 20px;
+}
+.inputdate input{
+    width: 100%;
+}
+
+.button{
+    width: 10%;
+    margin: 10px 20px;
+}
+.button button{
+    width: 100%;
+}

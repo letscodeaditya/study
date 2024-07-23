@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arrow fun</title>
+</head>
+<body>
+    <script>
+        function sum(a, b){
+            return a+b;
+        }
+
+        //arrow fun
+        let suma = (a,b) => {
+            a = 2*a;
+            return a+b;
+        }
+
+        //if there is only one line in code and that is return then we can write in one line and remove return and brackets
+        //here we are returning a+b
+        let sumB = (a,b) => a+b;
+
+        function double(a){
+            return 2*a;
+        }
+
+        //arrow fun
+        let doubleA = a => 2*a;
+
+        //if there is no parameter
+        function random(){
+            return math.random();
+        }
+
+        //when there is no parameter or more than one then give () else if only one para then you can skip like we did in double 
+        let randomA = () => math.random();
+
+
+
+
+        //////map function
+        //can traverse a array without writing a for loop 
+
+        let arr = [2,3,4,5,6];
+
+        let arr1 = [];
+
+        for(let i = 0; i< arr.length; i++){
+            arr1[i] = arr[i]*2;
+        }
+        //map
+        let arr2 = arr.map(function(val){
+            return val * 3;
+        });
+        //map with arrow fun
+        let arr3 = arr.map((val) => val * 3);
+    
+        //result : [4,6,8,10,12]
+
+
+
+
+        ///////filter function
+
+        let ar = [2,22,13,5,6,61,23,7];
+
+        //filter fun
+        let ar1 = ar.filter(function(val){
+            return val > 10;
+        });
+
+        //with arrow fun
+        let ar2 = ar.filter(val => val > 10);
+
+        //result [22,13,61,23]  number greater than 10
+
+        //2nd example
+
+        let team = [
+            {
+                name: "aditya",
+                position: "frontend"
+            },
+            {
+                name: "ayush",
+                position: "frontend"
+            },
+            {
+                name: "adi",
+                position: "backend"
+            }
+        ];
+
+        //to find people with pos frontend
+       let front = team.filter(val => val.position == "frontend");
+
+
+
+
+       ///////cookies
+
+       //to set cookies name:item
+       document.cookie = "item=milk";
+       //to set expire date, if we want to remove a cookie set its date to past
+       document.cookie = "loc=india; expires=sat, 20 mar 2022 12:00:00 utc";
+
+       //to take cookie
+       let x = document.cookie;
+
+       
+
+       /////////web storage(see pic)
+
+       //loacl storage
+       localStorage.setItem('firstname','aditya');
+       localStorage.setItem('location','delhi');
+
+       //to delete
+       localStorage.removeItem('location');
+
+
+       //session storage
+       sessionStorage.setItem('fisrtname', 'aditya');
+
+       sessionStorage.removeItem('firstname');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //////callback function
+        //by this we can pass a funtion as a parameter to another function
+        
+        function sayhello(){
+            console.log("hello");
+        }
+        function sayhi(){
+            console.log("hi");
+        }
+        //by callback fun we can call multiple function without calling them directly from inside the fun
+        function add(num1, num2, callback){
+            console.log(num1+num2);
+            callback();
+        }
+
+        let a = 10;
+        let b = 20;
+
+        add(a,b,sayhello);
+        add(a,b,sayhi);
+
+
+        
+
+    </script>
+</body>
+</html>

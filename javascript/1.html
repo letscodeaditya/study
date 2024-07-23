@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>where to write</title>
+
+    <!-- we can write js in three ways
+        
+    1.in html file itself -  can write anywhere inside head and body tag using script and we can use as much script in all over html
+        order of js is important where we write our script tag if writing first it will be loaded then after that it will read other written after that in html
+
+    2.in seprate js file - by using script src we link a js file to html 
+
+    3.in inspect -->
+    
+    <script src="1j.js"> </script>    
+
+    <script async src="1j.js"> </script>    
+    <!-- its on by default we dont have to write it in this it will parallely download js file and execute it -->
+    <script defer src="1j.js"> </script>    
+    <!-- in this browser first read all html then load js file
+    its very useful ex if we want a change in a line but we wrote js file above that line then we will face error bec after loading js file it dont have that line in which changes have to happen thats why we use defer in this so that first read all html then load js files -->
+
+
+    <script> alert("hello")</script>
+    
+    
+</head>
+<body>
+    <script> alert("hello")</script>
+    
+</body>
+</html>

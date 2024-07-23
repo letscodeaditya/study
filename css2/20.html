@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layers and z-index</title>
+    <style>
+        /* by this there is a lyer form one over other to change the order which will be over priority wise we can do it css */
+        /* to use z-index every elment in which it is used it should have a position property like relative etc
+        change z-index number to see the change  */
+#parent{
+            border: 1px solid red;
+            padding: 20px;
+            width: 50%;
+            margin: 100px;
+            position: relative;
+        }
+        #one{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            display: inline-block;
+            position: relative;
+            z-index: 2;
+            
+        }
+        #two{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            display: inline-block;
+            position: relative;
+            top: 50px;
+            left: -50px;
+            z-index: 3;
+            
+            
+        }
+        #three{
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            display: inline-block;
+            position: relative;
+            top: 100px;
+            left: -100px;
+            z-index: 1;
+            
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div id="one"></div>
+        <div id="two"></div>
+        <div id="three"></div>
+    </div>
+</body>
+</html>

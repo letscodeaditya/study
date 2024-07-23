@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>units</title>
+
+    <style>
+        #parent{
+            border: 1px solid rgb(255, 0, 0);
+            width: 800px;
+            /* vh view height is depend upon the website window size  */
+            height: 800px;
+            /* vw view width is depemd upon the website window size if we make it small by mouse it will adapt accordingly here it is 50% of total vw  */
+            width: 50vw;
+        }
+
+        #child{
+            border: 1px solid blue;
+            /* here 50 percent will be of parent which is 400px */
+            width: 50%;
+            font-size: 2rem;
+
+            /* vw and vh is use for making font size according to website browser page size */
+            font-size: 2vw;
+        }
+
+        html{
+            font-size: 14px;
+        }
+        /* in em if we give child 2em then it will be double of parent . in rem if we give any parent or child 3rem it will be triple of html font size (default size which we can give to html tag ) */
+
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <p>this is parent element</p>
+        <div id="child">
+            <p>
+                this is child element
+            </p>
+        </div>
+    </div>
+</body>
+</html>

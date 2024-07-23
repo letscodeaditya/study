@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom event(check web) - eventlistener, mouse events, key event </title>
+
+    <style>
+        #box{
+            height: 2000px;
+            width: 100px;
+            background-color: black ;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- 1st method  -->
+    <!-- in-line dom event  -->
+
+    <button id="btn" onclick="btnclick()">click me</button>
+
+    <script>
+        function btnclick(){
+            alert("button is clicked")
+        }
+    </script>
+
+    <script>
+    //2nd method 
+    let btnn = document.getElementById("btn");
+
+        btnn.addEventListener('click', btnclick); //nameofdomevent, function
+
+        //to add multipule event
+        btnn.addEventListener('mouseover', function () {
+            alert("hi");
+        })
+
+
+        //to remove a event
+        btnn.removeEventListener('click', btnclick);
+
+        </script>
+
+
+
+
+
+        <!-- page load event
+        
+        first domcontent is loaded then load -->
+
+        <img src="" alt="" id="image">
+
+        <script>
+            window.addEventListener('DOMContentLoaded', function(){
+                console.log("dom tree created");
+            })
+
+            window.addEventListener('load',function(){
+                console.log("fully loaded");
+            })
+
+            //targeting a element load time 
+            //selecting element
+            let img = document.getElementById("image");
+
+            img.addEventListener('load', function(){
+                console.log("fully loaded")});
+        </script>
+
+
+
+
+
+
+        <!-- mouse event  -->
+
+        <div id="box" oncontextmenu="fun()"></div>
+        <div id="box" ondblclick="fun2()"></div>
+        <div id="box" onmousedown="fun3()"></div>
+        <div id="box" onmouseup="fun4()"></div>
+        <div id="box" onmouseover="fun5()"></div>
+        <div id="box" onmouseout="fun6()"></div>
+
+        <script>
+            function fun() {
+                alert("activate by clicking right click");
+            }
+            function fun2() {
+                alert("activate by double clicking ");
+            }
+            function fun3() {
+                alert("activate by clicking and movind down");
+            }
+            function fun4() {
+                alert("activate by clicking and moving up");
+            }
+            function fun5() {
+                alert("activate ");
+            }
+            function fun6() {
+                alert("activate by getting out of div ");
+            }
+
+            ///////////key event
+
+            window.addEventListener('keydown',checkkey); //and keyup 
+
+            //this will get all the key pressed by user on keyboard
+
+            function checkkey(event) {
+                console.log(event.key);
+            }
+
+
+            /////////////scroll event
+
+            //to detect scoll no.
+
+            window.addEventListener('scroll',function(){
+                console.log("scrolling...");
+            });
+
+
+            //to detect up and down scroll - use deltaY for up&down and use deltaX for right&left
+            window.addEventListener('wheel',function(event){
+                if(event.deltaY < 0){
+                    console.log("scrolling up...");
+                }else if(event.deltaY > 0){
+                    console.log("scrolling down...");
+                }
+            });
+
+            //to change our page after user scroll till some perticular lin/pixel (use pageYoffset for up& down and pageXoffset for right&left)
+            window.addEventListener('scroll', function(){
+                if(window.pageYOffset > 150){
+                    document.body.style.background = "red";
+                }else{
+                    document.body.style.background = "white";
+                }
+            }); 
+
+        </script>
+
+
+
+
+        <form action="">
+            <input type="text" id="myinput">
+        </form>
+
+
+
+        <script>
+            //////////////////form event
+
+            //to detect when user is selected a form box for input its called focus state, and when nothing is selected then blur state
+
+            let x = document.getElementById("myinput");
+
+            x.addEventListener('focus', focusfunction);
+            x.addEventListener('blur', blurfunction);
+
+            function focusfunction(){
+                x.style.background = "yellow"; //the box will become yellow if selected
+            }
+            
+            function blurfunction(){
+                x.style.background = "white";
+            }
+
+            //will show given input in the form only when we change and then come out of focus
+            x.addEventListener('change', function(){
+                console.log(this.value);
+            });
+
+            //will show every singe change as we type
+            x.addEventListener('input', function(){
+                console.log(this.value);
+            });
+
+        </script>
+
+        
+        
+        
+
+
+
+</body>
+</html>

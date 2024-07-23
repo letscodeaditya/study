@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6</title>
+</head>
+<body>
+    <script>
+        //in es6 let and const added
+
+        /////difference btw var and let
+
+        //1.when we make a variable with var keyword it becomes property of global object window but with let it dont.
+        
+        //2.when we declare a variable with var we can again later in code redeclare it but with let we can't. 
+
+        //const we make a var constant it cant change in future
+        const count = 1;
+
+
+
+        /////default parameter
+
+        //here ="" is the default if nothing is passed as a parameter
+        function talk(m="bye"){
+            console.log(m);
+        }
+
+        talk("hi")
+
+
+
+        //////rest parameter 
+        //syntax - ...anyname[this will make a array of that name]
+        //we use this if we dont know how parameter is need for the user to enter , ex- a calculator for calcuating a+b+c....n
+
+        function sum(...na){
+            let result = 0;
+
+            for(let i=0; i<na.length; i++){
+                result += na[i];
+            }
+
+            console.log(result);
+        }
+
+        sum(2,5,7,9,5);
+
+
+        //////spread operator
+        //syntax - ... [same as rest but here it is used to spread arrays or copy them]
+
+        let array1 = [1,5,6];
+        let array2 = [5,8,7,...array1];
+
+        console.log(array2);
+
+
+        ///////for of loop
+        //to alterate a array and access its element one by one
+
+        let score = [1,5,6,4];
+
+        //every element will enter in x one by one
+        for(let x of score){
+            console.log(x);
+        }
+
+
+
+
+
+        ////////template literals
+        //we can use it for write string with space and to use varor expression directly with strings with using concatidate 
+
+        let str = `djabjbjbaj kdnakdn 
+        ajdbajd
+        dnakndl `;
+
+        let n = 0;
+        console.log(`my name is ${n*2}. thankyou`)
+
+
+
+        ////////araay destructuring
+
+
+        let book = ["adv js", , 200, 150];
+
+        // let name = book[0];
+        // let pages = book[1];
+        // let price = book[2];
+
+        //we can do this by array des.
+
+        let[name, page, price, publication] = book;
+        //to add a default value for var if not present in array
+
+        //let[name, page=500 , price, publication="book"] = book;
+
+        //in case of mutli dime array
+        let book2 = ["adv js2", 200, 500, ["tech", 2022]];
+
+        let [na, pag, pric, [public, year]] = book2; 
+
+        console.log(price);
+
+
+
+
+        ////////object destructuring
+
+        let bookn = {
+            nam: "adv js",
+            pa: 200,
+            pri: 150,
+
+            //nested 
+            publicati: {
+                pub_name: "tech",
+                yea: 2021
+            }
+
+        };
+
+        //to give var property of object
+        // here we have to give proper name same as object property name if we want to change that name then nameofproperty : giveurname
+        //to give default use =
+        //nested 
+        let{nam : giveurname, pa, pri = 200, publicati : {pub_name : newname, yea}} = bookn;
+        
+        console.log(nam);
+        console.log(giveurname);
+
+
+
+
+    </script>
+
+
+
+</body>
+</html>

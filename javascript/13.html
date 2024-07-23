@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom</title>
+</head>
+<body>
+    <ul>
+        <li class="cl">list 1</li>
+        <li id="first">list 2</li>
+        <li class="cl">list 3</li>
+    </ul>
+
+    <h2>this is heading 1</h2>
+    <div id="div1">    
+        <p>para 1</p>
+        <h2>this is heading 2</h2>
+        <p>para 2</p>
+        <h2>this is heading 3</h2>
+        <p>para 3</p>
+    </div>
+    <br>
+    <br>
+
+    <!-- query selector -->
+
+    <h2 class="intro">this is heading 1</h2>
+    <div id="div2">    
+        <p class="intro">para 1</p>
+        <h2 class="intro">this is heading 2</h2>
+        <p>para 2</p>
+        <h2>this is heading 3</h2>
+        <p class="intro">para 3</p>
+    </div>
+    <br>
+    <br>
+    <ul>
+        <li id="intron">list</li>
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+    </ul>
+    <ul id="new">
+        <li>list a</li>
+        <li>list b</li>
+        <li>list c</li>
+        <li>list d</li>
+    </ul>
+    <br>
+    <br>
+    <br>
+    <div id="hi">
+        <p>hello</p>
+    </div>
+
+
+    <script>
+        ///////selecting element by id name
+
+        // here the elements is stored as a object in this var 
+        let elem = document.getElementById("first");
+        console.log(elem);
+
+
+        /////// to get or change inside a selected element 
+        console.log(elem.innerHTML);
+
+        elem.innerHTML = "<p> hello </p>";
+
+
+
+
+
+        ////////selecting element by class name
+
+        //when there are multiple element with same class name then in js it is collection of html it will acts as array 
+
+        let gg = document.getElementsByClassName("cl");
+
+        for(let i=0; i<gg.length; i++){
+            gg[i].innerHTML = "<p> fuck </p>";
+        }
+
+
+
+
+        /////////selecting element by tag
+
+        //this will select all h2 tag inside html 
+        let tag = document.getElementsByTagName("h2");
+
+        // we can select a particular tag in a div 
+        let div1 = document.getElementById("div1");
+        let yy = div1.getElementsByTagName("h2");
+
+        for(let i=0; i<yy.length; i++){
+            yy[i].innerHTML = "<p> fuck </p>";
+        }
+
+
+
+
+        ////////selecting a element with class name and tag name both
+
+        // this will only select 1 element only not all with the tag and name 
+        let hh = document.querySelector("p.intro");
+        //this will select all the element with tag and class name like a array
+        let ryben = document.querySelectorAll("p.intro");
+
+        for(let y = 0; y < ryben.length; y++){
+            ryben[i].innerHTML = "yo";
+        }
+
+
+
+
+        ////////traversing going from child tag to parent and vice versa
+
+        //for child to parent
+        let pp = document.getElementById("intron");
+        // now parent element is selected 
+        let parent = pp.parentElement;
+        console.log(prt);
+
+
+        //for selecting sibling element
+        let nn = document.getElementById("intron");
+        let node1 = nn.previousElementSibling;
+        let node1 = nn.nextElementSibling;
+
+        // for parent to child
+        let neww = document.getElementById("new");
+        let node = neww.firstElementChild;
+        let node = neww.lastElementChild;
+        //for all
+        let node = neww.children
+
+
+
+
+        ///////create and apend element
+
+        //select
+        let bye = document.getElementById("hi");
+
+        //creating new element
+        let h1 = document.createElement('h1');
+
+        //creating text (using method)
+        let text = document.createTextNode("this is h1 tag");
+        //creating text (using property) /we can add+read with this property
+        h1.textContent = "bdhabdb";
+
+        //appending text in new element
+        h1.appendChild(text);
+
+        //appending new element in bye
+        bye.appendChild(h1);
+
+        //to add class and id name to our created element in js
+        h1.className = "ty";
+        h1.id = "new";
+
+
+        //to add new element in body itself
+        document.body.appendChild(h1);
+
+        //practice set- insert a new list in ul
+        
+
+
+
+
+
+
+    </script>
+</body>
+</html>

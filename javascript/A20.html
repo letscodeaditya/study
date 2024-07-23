@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oops</title>
+</head>
+<body>
+    
+    <script>
+        //before ES6 there was no oop no class etc but there were object
+
+        /////////to imply class type function there was constructer to make a blue print for object if there are same type of object same as oop concept
+
+
+        //variable inside a object is property of it and function is method
+        let person1 = {
+            firstna: "aditya",
+            lastna: "ayush",
+            'job kya': "job less",
+            ag: 22,
+
+            fullname: function(){
+                console.log(this.firstna + " " + this.lastna);
+            }
+        };
+
+        console.log(person1['job kya']);
+
+        let person2 = {
+            firstna: "aditya",
+            lastna: "ayush",
+            'job kya': "job less",
+            ag: 22,
+
+            fullname: function(){
+                console.log(this.firstna + " " + this.lastna);
+            }
+        };
+
+        // constructure function - so that we dont have to create multiple object with same property
+
+        function person(first, last, a){
+            this.firstname = first;
+            this.lastname = last;
+            this.age = a;
+
+            this.sayhi = function(){
+                alert("hi");
+            }
+
+            this.changeage = function(newage){
+                this.age = newage;
+            }
+        }
+        
+        //to create a object from constructor
+        let personc = new person("aditya", "ayush", 22);
+
+        //to change age
+        personc.changeage(23); 
+
+
+
+
+
+        //////inheritance before es6
+
+        //we can use prototype - when we directly create a object a default object prototype with pre built method is linked with it
+        //and when we create a object from a constructor then a constructor prototype is link with the object and plus the default object prototype with pre build methods is linked as well (see pic on phone)
+
+        //when a object is made from constructor all the property is copied plus if any method 
+        //to avoid dont repeat same method over all the object we can put that method to the constructor prototype which will be link (not copied) to all the object created by that constructor as we make objects
+        
+        function persona(fi,l,a){
+            this.first_name = fi;
+            this.last_name = l;
+            this.age_new = a;
+        }
+
+        persona.prototype.give_fullname = function(){
+            console.log(this.first_name + " " + this.last_name);
+        }
+
+        let per = new persona("adi","ayush",23);
+
+        //inherite
+
+        function creature(life){
+            this.lifespan = life;
+        }
+
+        creature.prototype.breath = function(){
+            console.log("all living thing breath");
+        }
+
+        let creature1 = new creature(200);
+
+        //linking person prototype with creature prototype so that breath function can be inherite 
+
+        person.prototype.__proto__ = object.create(creature.prototype);
+
+        //this will remove person prototype and link creature prototype only to persons object
+        //person.prototype = object.create(creature.prototype);
+
+        //now we can use breath in person objects
+
+        console.log(per.breath());
+
+
+
+
+        
+    </script>
+</body>
+</html>
