@@ -1,0 +1,14 @@
+One day, I went to an ATM to withdraw a large sum of money. After entering my PIN, I heard the familiar sound of the cash being dispensed. But just before the money could come out, the power suddenly went out. In that moment, I started to panic, thinking that I might lose my money. However, I quickly realized that the backend systems of ATMs and banks must follow the ACID properties, which assured me that my transaction was safe.
+
+ACID is an acronym that stands for Atomicity, Consistency, Isolation, and Durability—four essential properties that ensure reliable processing of database transactions.
+
+Atomicity ensures that each transaction is treated as a single unit, which either completely succeeds or fails. In my case, either the entire withdrawal transaction would complete and I’d receive the cash, or the transaction would be rolled back, and no money would be deducted from my account. This means that there was no risk of me losing money due to the incomplete transaction.
+
+Consistency guarantees that a transaction brings the database from one valid state to another. For my ATM withdrawal, consistency ensures that the system follows all the rules and constraints set by the bank, such as ensuring my account balance is updated correctly and not allowing the withdrawal if my account didn’t have sufficient funds.
+
+Isolation means that even though multiple transactions might be happening at the same time, each one operates independently without interference. So, if there were other customers using the bank’s services at the same time, my transaction would not be affected by theirs, and vice versa.
+
+Durability ensures that once a transaction is committed, it will remain in the system even in the case of a power failure or system crash. After the power was restored, I could be confident that if the transaction had been completed, the money would still be available for me to withdraw or it would have remained safely in my account.
+
+Thanks to the ACID properties, I could rest assured that my funds were secure, even in the face of unexpected technical issues. This experience highlighted for me the critical role these principles play in the reliability and integrity of database systems, particularly in high-stakes environments like banking.
+
