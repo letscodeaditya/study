@@ -7,7 +7,7 @@ public class Sum {
     public int missingNumber(int[] nums) {
         //arr[1,2,3,5,6]
         //sum of n natural number
-        // 5 * 5+1/2 = 5 * 3 = 15
+        // 5 * 5+1/2 = 5 * 3 = 15   
         int n = nums.length;
         int expectedSum = n * (n + 1) / 2;
         int sum = 0;

@@ -103,6 +103,7 @@ public class Third {
 
 
         //[1,1,1,2,2,3,4]
+        //[1,2,3,3,3,5,6]
         //remove duplicates from a sorted array but dont make new array and return the no. of unique element(two-pointer)
         public static void removeDup(int arr[]){
             int pointeri = 0;

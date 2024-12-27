@@ -75,6 +75,7 @@ public class Third2 {
 
         for(int it : mp.keySet()){
             union.add(it);
+            mp.containsKey(union);
         }
     }
 
@@ -212,6 +213,8 @@ public class Third2 {
 
 
 
+
+    //Find the number that appears once, and other numbers twice.
 
     public void singleNumberBetter(int[] nums) {
         HashMap<Long, Long> mp = new HashMap<>();

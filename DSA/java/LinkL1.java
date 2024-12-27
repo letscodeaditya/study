@@ -29,7 +29,8 @@ public class LinkL1 {
         // deleteTail(head);
         // deleteAtKth(head, 2);
         // insertInHead(head, 4);
-        insetInBack(head, 9);
+        // insetInBack(head, 9);
+        insertAtKth(head, 2, 7);
 
     }
 
@@ -50,9 +51,57 @@ public class LinkL1 {
         printLi(head);
     }
 
+    public static node insertAtKth(node head, int k, int value){
+        if (k == 1) {
+            node temp = new node(value,head);
+            return temp;
+        }
+        if(head == null){
+            return head;
+        }
+        node temp = head;
+        node prev = null;
+        int count = 0;
+        while (temp.next != null) {
+            count++;
+            if(count == k){
+                node var = new node(value,temp);
+                prev.next = var;
+            }
+            prev = temp;
+            temp = temp.next;
+        }
+        printLi(head);
+        return head;
+    }
 
+    public static node insertBeforeElement(node head,int ele, int value){
+        if(ele == 1){
+            node temp = new node(value,head);
+            return temp;
+        }
+        if(head == null){
+            return null;
+        }
 
+        node temp = head;
+        boolean flag = false;
+        while(temp.next != null){
+            if(temp.next.data == ele){
+                node var = new node(value,temp.next);
+                temp.next = var;
+                flag = true;
+            }
+            temp = temp.next;
+        }
 
+        if(flag == true){
+            System.out.println("element found and inserted before it:");
+        }else{
+            System.out.println("no such element");
+        }
+        return head;
+    }
 
 
 
@@ -76,7 +125,7 @@ public class LinkL1 {
 
     public static node deleteAtKth(node head, int k){
         if (k == 1) {
-            return head;
+            return head.next;
         }
         if(head == null){
             return head;

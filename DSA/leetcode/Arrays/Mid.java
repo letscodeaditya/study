@@ -1,6 +1,8 @@
 package leetcode.Arrays;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class Mid {
 
@@ -69,7 +71,7 @@ public class Mid {
     // After traversing the whole array, we will check the element stored in the variable. If the question states that the array must contain a majority element, the stored element will be that one but if the question does not state so, then we need to check if the stored element is the majority element or not. If not, then the array does not contain any majority element.
 
     // Approach: 
-    // Initialize 2 variables:
+    // Initialize 2 variables:  
     // Count –  for tracking the count of element
     // Element – for which element we are counting
     // Traverse through the given array.
@@ -95,6 +97,35 @@ public class Mid {
         return numb;
     }
 
+
+
+
+    //118. Pascal's Triangle generate 
+    //formula for each row element is 
+
+    public List<Integer> generateRow(int row){
+        long ans = 1;
+        List<Integer> ansRow = new ArrayList<>();
+        ansRow.add(1);
+
+        for(int col = 1; col < row; col++){
+            ans = ans * (row - col);
+            ans = ans/col;
+            ansRow.add((int)ans);
+        }
+        return ansRow;
+
+    }
+
+    public List<List<Integer>> generate(int numRows) {
+        List<List<Integer>> ans = new ArrayList<>();
+
+        for(int row = 1; row <= numRows; row++ ){
+            ans.add(generateRow(row));
+        }
+        return ans;
+
+    }
 
 
 

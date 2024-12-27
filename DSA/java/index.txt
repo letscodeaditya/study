@@ -1,10 +1,28 @@
 1 - basic ques 
+
 2 - patterns incomp
+
 3[1,2] - 1D array
+leetcode/mid
+
 4 - 2D array incomp
+
 Binary[1,2] - binary search 
+
 5 - String
-LinkK - linklist
+
+LinkK [1-2] - linklist
+
+
+stackques [1-2] - stack 
+
+SwAndTp [1]   - Sliding Window and Two Pointer 
+
+
 6 - sorting (insertion,selection,bubble)
+
+
 7 - hashing
+
+
 8 - recursion

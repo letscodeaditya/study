@@ -20,6 +20,9 @@ public class Seven {
         }
 
     }
+
+
+    
     
     public static void lowerCase(String word, int hashSize, int queue){
         Scanner sc = new Scanner(System.in);
